@@ -1,0 +1,443 @@
+export interface Product {
+  id: string;
+  slug: string;
+  name: string;
+  subtitle: string;
+  category: string;
+  categorySlug: 'teapots-and-accessories' | 'tableware' | 'table-linen' | 'tea' | 'gift-boxes' | 'pinkribbon';
+  priceHKD: number;
+  priceGBP: number;
+  rating: number;
+  reviewCount: number;
+  image: string;
+  galleryImages: string[];
+  badge?: 'Exclusive' | 'Mono Partner' | 'Handcrafted' | 'Bestseller' | 'Gift Ready' | 'Limited Edition';
+  inStock: boolean;
+  description: string;
+  story: string;
+  specifications: { label: string; value: string }[];
+  careInstructions: string[];
+  variants?: { id: string; name: string; priceHKD: number; priceGBP: number }[];
+  isTea?: boolean;
+  tastingNotes?: {
+    aroma: string;
+    flavorNotes: string[];
+    body: 'Delicate' | 'Medium' | 'Full' | 'Velvety';
+    astringency: 'Very Low' | 'Low' | 'Balanced' | 'Crisp';
+    sweetness: 'High' | 'Medium' | 'Subtle';
+  };
+  brewingGuide?: {
+    waterTemp: string;
+    leafRatio: string;
+    steepTime: string;
+    infusions: number;
+  };
+}
+
+export const PRODUCTS: Product[] = [
+  {
+    id: 'mono-filio-1-5l',
+    slug: 'mono-filio-teapot-1-5l-with-warmer',
+    name: 'Mono Filio Teapot (1.5L) with Integrated Warmer',
+    subtitle: 'German-Engineered Heat-Resistant Borosilicate Glass & Stainless Steel',
+    category: 'Mono Teapots & Accessories',
+    categorySlug: 'teapots-and-accessories',
+    priceHKD: 1880,
+    priceGBP: 190,
+    rating: 5.0,
+    reviewCount: 34,
+    image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1000&q=80',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?auto=format&fit=crop&w=1000&q=80',
+    ],
+    badge: 'Mono Partner',
+    inStock: true,
+    description: 'The iconic Mono Filio teapot elevates tea brewing into visual theatre. Hand-blown heat-resistant borosilicate glass rests within a sculptural 18/10 stainless steel frame with a matching tea-light warmer base.',
+    story: 'Designed in Germany by Tassilo von Grolman, the Mono Filio revolutionized tea preparation by suspending tea leaves in a generously proportioned mesh strainer where they can unfurl completely, bathed in radiant candlelight.',
+    specifications: [
+      { label: 'Origin', value: 'Mettmann, Germany' },
+      { label: 'Capacity', value: '1.5 Litres (6–8 Cups)' },
+      { label: 'Material', value: 'Duran® Borosilicate Glass & 18/10 Stainless Steel' },
+      { label: 'Components', value: 'Glass Bowl, Stainless Frame, Strainer, Lid, Warmer Base' },
+    ],
+    careInstructions: [
+      'Glass bowl and stainless mesh strainer are dishwasher safe',
+      'Wipe the stainless frame and warmer base with a soft microfiber cloth',
+      'Use standard unscented tea-light candles for warming',
+    ],
+    variants: [
+      { id: '1.5L', name: '1.5 Litre (Standard)', priceHKD: 1880, priceGBP: 190 },
+      { id: '0.6L', name: '0.6 Litre (Compact Solo)', priceHKD: 1480, priceGBP: 150 },
+    ],
+  },
+  {
+    id: 'mono-filio-0-6l',
+    slug: 'mono-filio-teapot-0-6l-compact',
+    name: 'Mono Filio Teapot (0.6L) Compact Edition',
+    subtitle: 'Intimate Teatime for One or Two Connoisseurs',
+    category: 'Mono Teapots & Accessories',
+    categorySlug: 'teapots-and-accessories',
+    priceHKD: 1480,
+    priceGBP: 150,
+    rating: 4.9,
+    reviewCount: 22,
+    image: 'https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=1000&q=80',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1000&q=80',
+    ],
+    badge: 'Exclusive',
+    inStock: true,
+    description: 'A scaled-down masterpiece perfect for personal morning reflections or afternoon desk sessions. Features the exact same German precision engineering and optical clarity as its larger counterpart.',
+    story: 'Engineered for Gong Fu or single-serving high mountain teas where water-to-leaf ratios demand precise, intimate volumes.',
+    specifications: [
+      { label: 'Origin', value: 'Mettmann, Germany' },
+      { label: 'Capacity', value: '0.6 Litres (2–3 Cups)' },
+      { label: 'Material', value: 'Duran® Borosilicate Glass & Stainless Steel' },
+    ],
+    careInstructions: [
+      'Dishwasher safe components',
+      'Resistant to thermal shocks up to 150°C',
+    ],
+  },
+  {
+    id: 'mono-replacement-glass-1-5l',
+    slug: 'mono-replacement-glass-bowl-1-5l',
+    name: 'Mono Filio Replacement Glass Bowl (1.5L)',
+    subtitle: 'Genuine Duran® Borosilicate Replacement',
+    category: 'Mono Teapots & Accessories',
+    categorySlug: 'teapots-and-accessories',
+    priceHKD: 680,
+    priceGBP: 69,
+    rating: 5.0,
+    reviewCount: 16,
+    image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1000&q=80',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1000&q=80',
+    ],
+    inStock: true,
+    description: 'Authentic replacement glass bowl for the 1.5L Mono Filio teapot. Precision molded in Germany to seat flawlessly into your existing stainless steel frame.',
+    story: 'Invest in longevity: Mono teapots are designed to be heirloom objects passed across generations with readily available modular parts.',
+    specifications: [
+      { label: 'Compatibility', value: 'Mono Filio 1.5L and Classic Models' },
+      { label: 'Material', value: 'Heat-Resistant Borosilicate' },
+    ],
+    careInstructions: ['Dishwasher safe', 'Handle with care when seating into frame'],
+  },
+  {
+    id: 'oriental-blossom-dinner-plate',
+    slug: 'oriental-blossom-dinner-plate-mulberry-reverie',
+    name: 'Oriental Blossom Dinner Plate (Mulberry Reverie)',
+    subtitle: 'Fine Porcelain with Hand-Applied Botanical Glaze & Gold Rim',
+    category: 'Tableware',
+    categorySlug: 'tableware',
+    priceHKD: 420,
+    priceGBP: 42,
+    rating: 4.9,
+    reviewCount: 28,
+    image: 'https://images.unsplash.com/photo-1615865417491-9941019fbc00?auto=format&fit=crop&w=1000&q=80',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1615865417491-9941019fbc00?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1000&q=80',
+    ],
+    badge: 'Bestseller',
+    inStock: true,
+    description: 'Capturing the tranquil essence of Hong Kong floral heritage, the Oriental Blossom collection features painterly mulberry branch motifs bordered by a delicate 24k gold-edged rim.',
+    story: 'Designed exclusively for Time for Tea HK, each plate undergoes triple-firing to ensure high chip resistance while maintaining a luminous, translucent porcelain body.',
+    specifications: [
+      { label: 'Diameter', value: '27.5 cm (10.8 inches)' },
+      { label: 'Material', value: 'Fine Bone China & 24k Gold Accents' },
+      { label: 'Finish', value: 'High Gloss Luminous Glaze' },
+    ],
+    careInstructions: [
+      'Hand wash recommended with mild soap to preserve gold luster',
+      'Not suitable for microwave use due to genuine metallic accents',
+    ],
+    variants: [
+      { id: 'single', name: 'Individual Plate', priceHKD: 420, priceGBP: 42 },
+      { id: 'set-of-4', name: 'Set of 4 Plates (Save 10%)', priceHKD: 1512, priceGBP: 152 },
+    ],
+  },
+  {
+    id: 'oriental-blossom-salad-plate',
+    slug: 'oriental-blossom-salad-plate-mulberry-reverie',
+    name: 'Oriental Blossom Salad & Dessert Plate',
+    subtitle: 'Ideal for Petit Fours, Scones & Canapés',
+    category: 'Tableware',
+    categorySlug: 'tableware',
+    priceHKD: 350,
+    priceGBP: 35,
+    rating: 5.0,
+    reviewCount: 19,
+    image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1000&q=80',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1615865417491-9941019fbc00?auto=format&fit=crop&w=1000&q=80',
+    ],
+    inStock: true,
+    description: 'The companion piece to our dinner plate, perfectly sized for serving warm Devonshire scones with clotted cream, tartlets, or delicate cucumber tea sandwiches.',
+    story: 'Part of our signature teatime tablescape rental service, now available for your permanent personal collection.',
+    specifications: [
+      { label: 'Diameter', value: '21 cm (8.25 inches)' },
+      { label: 'Material', value: 'Fine Bone China' },
+    ],
+    careInstructions: ['Hand wash recommended', 'Dry with a soft linen cloth'],
+  },
+  {
+    id: 'empress-tiered-tea-stand',
+    slug: 'empress-tiered-afternoon-tea-stand',
+    name: 'The Empress 3-Tier Afternoon Tea Cake Stand',
+    subtitle: 'Polished Brass & Handcrafted Porcelain Tiers',
+    category: 'Tableware',
+    categorySlug: 'tableware',
+    priceHKD: 1280,
+    priceGBP: 130,
+    rating: 5.0,
+    reviewCount: 15,
+    image: 'https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=1000&q=80',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=1000&q=80',
+    ],
+    badge: 'Exclusive',
+    inStock: true,
+    description: 'The crowning centerpiece of any authentic British afternoon tea. Three tiers of porcelain plates mounted upon a sculptural polished brass center column.',
+    story: 'Engineered for balance, easy disassembly for flat storage, and effortless tablescape styling.',
+    specifications: [
+      { label: 'Height', value: '42 cm' },
+      { label: 'Base Tier', value: '27 cm diameter' },
+      { label: 'Material', value: 'Porcelain & Solid Brass' },
+    ],
+    careInstructions: ['Plates are dishwasher safe when disassembled', 'Wipe central stem with dry cloth'],
+  },
+  {
+    id: 'mimosa-embroidered-napkins',
+    slug: 'mimosa-hand-embroidered-linen-napkin-set',
+    name: 'Mimosa Botanical Hand-Embroidered Napkin Set',
+    subtitle: 'Set of 4 • 100% French Flax Linen with Scalloped Edge',
+    category: 'Table Linen',
+    categorySlug: 'table-linen',
+    priceHKD: 680,
+    priceGBP: 69,
+    rating: 4.9,
+    reviewCount: 31,
+    image: 'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1000&q=80',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=1000&q=80',
+    ],
+    badge: 'Handcrafted',
+    inStock: true,
+    description: 'Woven from pre-washed French flax linen, each napkin is embroidered by hand with vibrant mimosa blossoms and finished with a bespoke scalloped stitch.',
+    story: 'Crafted in collaboration with artisanal embroidery cooperatives, combining European heritage linen with Asian floral motifs.',
+    specifications: [
+      { label: 'Dimensions', value: '45 cm x 45 cm' },
+      { label: 'Set Size', value: '4 Napkins per set' },
+      { label: 'Material', value: '100% Certified French Flax Linen (180 GSM)' },
+    ],
+    careInstructions: [
+      'Machine wash gentle cycle at 30°C',
+      'Air dry flat or tumble dry low',
+      'Iron while slightly damp for crisp hotel-finish folds',
+    ],
+  },
+  {
+    id: 'mulberry-embroidered-runner',
+    slug: 'mulberry-reverie-table-runner',
+    name: 'Mulberry Reverie Pure Linen Table Runner',
+    subtitle: 'Bespoke Centerpiece Tablecloth Accent (220 cm)',
+    category: 'Table Linen',
+    categorySlug: 'table-linen',
+    priceHKD: 880,
+    priceGBP: 89,
+    rating: 5.0,
+    reviewCount: 14,
+    image: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=1000&q=80',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=1000&q=80',
+    ],
+    badge: 'Limited Edition',
+    inStock: true,
+    description: 'Designed to drape gracefully down any dining or coffee table, framing the Mono teapot and tableware with soft botanical elegance.',
+    story: 'Features subtle hand-drawn mulberry branch embroidery along both terminal borders.',
+    specifications: [
+      { label: 'Dimensions', value: '40 cm x 220 cm' },
+      { label: 'Fabric', value: '100% Belgian Linen' },
+    ],
+    careInstructions: ['Gentle cycle machine wash', 'Iron with steam on medium-high'],
+  },
+  {
+    id: 'high-mountain-oolong',
+    slug: 'formosa-high-mountain-oolong-tea',
+    name: 'Formosa High Mountain Oolong (Ali Shan Vintage)',
+    subtitle: 'Single-Estate Hand-Plucked Loose Leaf Tea (75g Caddy)',
+    category: 'Loose Leaf Tea',
+    categorySlug: 'tea',
+    priceHKD: 320,
+    priceGBP: 33,
+    rating: 5.0,
+    reviewCount: 45,
+    image: 'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=1000&q=80',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1000&q=80',
+    ],
+    badge: 'Bestseller',
+    inStock: true,
+    isTea: true,
+    description: 'Grown at 1,600 metres above sea level shrouded in morning mist. Tightly rolled emerald spheres that unfurl into velvety infusions of orchid nectar, fresh cream, and sweet lingering alpine air.',
+    story: 'Harvested exclusively in small micro-batches. Paired best when brewed in transparent glass teapots like the Mono Filio to observe the leaves dramatically unfurling.',
+    specifications: [
+      { label: 'Origin', value: 'Ali Shan Mountain, Taiwan (1,600m)' },
+      { label: 'Harvest Season', value: 'Spring First Flush' },
+      { label: 'Weight', value: '75g Air-sealed Tin Caddy' },
+      { label: 'Oxidation', value: '15–20% Lightly Oxidized' },
+    ],
+    careInstructions: ['Store in airtight caddy away from direct sunlight, moisture, and strong aromas'],
+    tastingNotes: {
+      aroma: 'Wild orchid, honeysuckle, and fresh pine dew',
+      flavorNotes: ['White Peach', 'Alpine Cream', 'Lilac Blossom', 'Sweet Bamboo'],
+      body: 'Velvety',
+      astringency: 'Very Low',
+      sweetness: 'High',
+    },
+    brewingGuide: {
+      waterTemp: '92°C (198°F)',
+      leafRatio: '4g per 200ml water',
+      steepTime: '2.5 to 3 minutes',
+      infusions: 6,
+    },
+  },
+  {
+    id: 'imperial-jasmine-pearls',
+    slug: 'imperial-jasmine-dragon-pearls',
+    name: 'Imperial Jasmine Dragon Pearls',
+    subtitle: 'Silver Needle Green Tea Hand-Scented 7 Times with Night-Blooming Jasmine',
+    category: 'Loose Leaf Tea',
+    categorySlug: 'tea',
+    priceHKD: 280,
+    priceGBP: 29,
+    rating: 4.9,
+    reviewCount: 38,
+    image: 'https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?auto=format&fit=crop&w=1000&q=80',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?auto=format&fit=crop&w=1000&q=80',
+    ],
+    badge: 'Exclusive',
+    inStock: true,
+    isTea: true,
+    description: 'Young tender tea buds hand-rolled into delicate pearls. As they steep, they blossom into a deeply intoxicating, natural jasmine floral fragrance without any artificial oils.',
+    story: 'Processed in Fujian using centuries-old traditional night-scenting techniques where fresh blossoms are laid over tea beds overnight.',
+    specifications: [
+      { label: 'Origin', value: 'Fuding, Fujian Province' },
+      { label: 'Weight', value: '80g Signature Caddy' },
+      { label: 'Processing', value: '7x Night-Scented with Fresh Blossoms' },
+    ],
+    careInstructions: ['Keep sealed in cool dark pantry'],
+    tastingNotes: {
+      aroma: 'Intense night-blooming jasmine and sweet nectar',
+      flavorNotes: ['Jasmine Floral', 'Dewy Melon', 'Honey', 'Silky Green Tea'],
+      body: 'Delicate',
+      astringency: 'Low',
+      sweetness: 'High',
+    },
+    brewingGuide: {
+      waterTemp: '80°C (176°F)',
+      leafRatio: '3g (approx 15-20 pearls) per 250ml',
+      steepTime: '2 to 3 minutes',
+      infusions: 4,
+    },
+  },
+  {
+    id: 'royal-breakfast-blend',
+    slug: 'time-for-tea-royal-breakfast-blend',
+    name: 'Time for Tea Royal English Breakfast Blend',
+    subtitle: 'Malty Assam, Ceylon & Darjeeling Golden Tips (100g Caddy)',
+    category: 'Loose Leaf Tea',
+    categorySlug: 'tea',
+    priceHKD: 240,
+    priceGBP: 25,
+    rating: 4.8,
+    reviewCount: 52,
+    image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1000&q=80',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1000&q=80',
+    ],
+    inStock: true,
+    isTea: true,
+    description: 'Our house signature morning black tea. Robust, malty, with a deep amber liquor that stands beautifully on its own or with a splash of warm milk and honey.',
+    story: 'Formulated to pair impeccably with clotted cream scones, warm pastries, and savory tea sandwiches.',
+    specifications: [
+      { label: 'Blend', value: 'Single-Estate Assam & Ceylon Highlands' },
+      { label: 'Weight', value: '100g Matte Navy Caddy' },
+    ],
+    careInstructions: ['Store sealed at room temperature'],
+    tastingNotes: {
+      aroma: 'Malt, toasted brioche, and golden honey',
+      flavorNotes: ['Rich Malt', 'Dark Cocoa', 'Dried Currants', 'Crisp Tannins'],
+      body: 'Full',
+      astringency: 'Balanced',
+      sweetness: 'Medium',
+    },
+    brewingGuide: {
+      waterTemp: '98°C (208°F)',
+      leafRatio: '3.5g per 250ml',
+      steepTime: '3.5 to 4 minutes',
+      infusions: 2,
+    },
+  },
+  {
+    id: 'royal-teatime-hamper',
+    slug: 'the-royal-afternoon-tea-hamper',
+    name: 'The Royal Afternoon Tea Luxury Hamper',
+    subtitle: 'Mono Teapot 1.5L + 2 Bone China Sets + Oolong Caddy + Keepsake Trunk',
+    category: 'Gift Boxes',
+    categorySlug: 'gift-boxes',
+    priceHKD: 3280,
+    priceGBP: 330,
+    rating: 5.0,
+    reviewCount: 41,
+    image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1000&q=80',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1000&q=80',
+    ],
+    badge: 'Gift Ready',
+    inStock: true,
+    description: 'Our most prestigious gift presentation. Encased in a bespoke gold-stamped royal navy keepsake trunk lined with champagne satin, featuring everything needed for a celebratory teatime.',
+    story: 'Includes personalized calligraphy card, gold satin ribbon, and certificate of Mono Germany authenticity.',
+    specifications: [
+      { label: 'Packaging', value: 'Handmade Rigid Gift Trunk with Magnetic Closure' },
+      { label: 'Includes', value: 'Mono 1.5L Teapot, 2x Oriental Blossom Plates, 1x Ali Shan Oolong, 2x Mimosa Napkins' },
+      { label: 'Delivery', value: 'Complimentary White Glove Delivery in Hong Kong' },
+    ],
+    careInstructions: ['Keep trunk dry; perfect as a keepsake storage box for fine linens'],
+  },
+  {
+    id: 'pink-ribbon-gift-box',
+    slug: 'pink-ribbon-october-charity-gift-box',
+    name: 'Pink Ribbon October Charity Tea & Rose Box',
+    subtitle: 'Limited Edition • 20% Proceeds Donated to HK Breast Cancer Foundation',
+    category: 'Pink Ribbon October',
+    categorySlug: 'pinkribbon',
+    priceHKD: 880,
+    priceGBP: 89,
+    rating: 5.0,
+    reviewCount: 30,
+    image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1000&q=80',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1000&q=80',
+    ],
+    badge: 'Limited Edition',
+    inStock: true,
+    description: 'In honor of Breast Cancer Awareness, this curated blush pink gift box features organic French rose petal tea, two handcrafted pink scallop linen napkins, and a commemorative enamel ribbon pin.',
+    story: 'Time for Tea HK has partnered with local health charities since 2021 to fund free mammograms for underprivileged women in Hong Kong.',
+    specifications: [
+      { label: 'Includes', value: 'Blush French Rose Tea (60g), 2x Scalloped Linen Napkins, Enamel Pin' },
+      { label: 'Donation', value: '20% Net Proceeds to HK Breast Cancer Foundation' },
+    ],
+    careInstructions: ['Enjoy with warm gratitude'],
+  },
+];
