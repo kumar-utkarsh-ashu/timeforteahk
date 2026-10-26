@@ -20,7 +20,7 @@ export function ProductCard({ product }: ProductCardProps) {
     <div className="group card-luxury flex flex-col justify-between overflow-hidden bg-white border border-[#E8E4DC] hover:border-[#C5A880] transition-all duration-300">
       {/* Image Container */}
       <div className="relative aspect-square w-full overflow-hidden bg-[#FAF8F5]">
-        <Link href={`/shop/product/${product.slug}`} className="block w-full h-full">
+        <Link href={`/shop/product/${product.slug}`} className="relative block w-full h-full">
           <Image
             src={product.image}
             alt={product.name}

@@ -195,6 +195,32 @@
   transform: translateY(-2px);
 }
 
+.btn-luxury-outline-light {
+  background-color: transparent;
+  color: #FFFFFF;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.btn-luxury-outline-light:hover {
+  background-color: #FFFFFF;
+  color: var(--navy-deep);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
 /* Glassmorphism & Cards */
 .card-luxury {
   background-color: #FFFFFF;

@@ -30,7 +30,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
       <div className="relative w-full max-w-xs bg-[#FAF8F5] h-full shadow-2xl flex flex-col z-10 overflow-y-auto">
         {/* Top Header */}
         <div className="p-5 border-b border-[#E8E4DC] flex items-center justify-between bg-white">
-          <Logo variant="dark" showSubtitle={false} />
+          <Logo variant="dark" showSubtitle={false} onClick={onClose} />
           <button
             onClick={onClose}
             className="p-2 text-[#0C2340] hover:text-[#C5A880] transition-colors"

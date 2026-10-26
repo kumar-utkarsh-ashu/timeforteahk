@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Sparkles, Shield, Gift, Award, Calendar, ChevronRight } from 'lucide-react';
+import { ArrowRight, Sparkles, Shield, Gift, Calendar, ChevronRight } from 'lucide-react';
 import { PRODUCTS } from '@/data/products';
 import { TABLESCAPE_GALLERY } from '@/data/eventPackages';
 import { JOURNAL_POSTS } from '@/data/journalPosts';
@@ -19,67 +19,93 @@ export default function HomePage() {
 
   return (
     <div className="space-y-20 sm:space-y-28 pb-20">
-      {/* 1. Hero Editorial Section */}
-      <section className="relative min-h-[85vh] sm:min-h-[88vh] flex items-center bg-[#0C2340] text-white overflow-hidden">
-        {/* Background Image with Cinematic Overlay */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=2000&q=85"
-            alt="Mono Filio Teapot Candlelight Afternoon Tea"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center opacity-40 mix-blend-luminosity scale-105 animate-pulse duration-[10000ms]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0C2340] via-[#0C2340]/85 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0C2340] via-transparent to-black/40" />
-        </div>
+      {/* 1. Hero Editorial Section - Blended Layout matching Pola Vida reference */}
+      <section className="relative min-h-[calc(100vh-100px)] lg:h-[calc(100vh-100px)] lg:max-h-[820px] flex items-center bg-[#0C2340] text-white overflow-hidden">
+        {/* Subtle Ambient Background Gradient */}
+        <div className="absolute inset-0 bg-radial-at-t from-[#16325C]/40 via-[#0C2340] to-[#081629] pointer-events-none" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 py-20 lg:py-28 w-full">
-          <div className="max-w-2xl space-y-6">
-            {/* Exclusive Partnership Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-[#C5A880]/40 text-amber-200 text-xs font-semibold">
-              <Award className="w-3.5 h-3.5 text-[#C5A880]" />
-              <span>Official & Exclusive Distributor for Mono Germany in Hong Kong</span>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-8 xl:py-10 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-center">
+            {/* Left Column: Editorial Headline & CTAs */}
+            <div className="md:col-span-7 space-y-4 lg:space-y-5">
+              <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-serif text-white leading-[1.12] tracking-tight">
+                Make Tea Time a Time to Remember.
+              </h1>
+
+              <p className="text-xs sm:text-sm lg:text-base text-white/85 leading-relaxed font-light max-w-xl">
+                Elevating the afternoon tea ritual from routine into mindful luxury. Explore German-engineered <strong>Mono Filio</strong> teaware, artisanal French flax linens, rare single-estate harvests, and turnkey event styling in Hong Kong.
+              </p>
+
+              {/* CTAs */}
+              <div className="pt-1 flex flex-wrap items-center gap-3 sm:gap-4">
+                <Link href="/shop" className="btn-luxury-gold text-xs px-6 py-3 sm:px-7 sm:py-3.5">
+                  <span>Explore The Collection</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+
+                <Link
+                  href="/custom-hamper"
+                  className="btn-luxury-outline-light text-xs px-6 py-3 sm:px-7 sm:py-3.5"
+                >
+                  <Gift className="w-4 h-4 text-[#C5A880]" />
+                  <span>Curate Bespoke Hamper</span>
+                </Link>
+              </div>
+
+              {/* Trust Badges */}
+              <div className="pt-4 sm:pt-5 lg:pt-6 grid grid-cols-3 gap-4 sm:gap-6 border-t border-white/15 text-xs text-white/75">
+                <div>
+                  <p className="font-serif text-sm sm:text-base font-semibold text-white">Mono Germany</p>
+                  <p className="text-[10px] sm:text-[11px] text-white/60">Exclusive HK Partner</p>
+                </div>
+                <div>
+                  <p className="font-serif text-sm sm:text-base font-semibold text-white">100% French Flax</p>
+                  <p className="text-[10px] sm:text-[11px] text-white/60">Hand-Embroidered</p>
+                </div>
+                <div>
+                  <p className="font-serif text-sm sm:text-base font-semibold text-white">Central Atelier</p>
+                  <p className="text-[10px] sm:text-[11px] text-white/60">148 Queen&apos;s Road</p>
+                </div>
+              </div>
             </div>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif text-white leading-[1.08] tracking-tight">
-              Make Tea Time a Time to Remember.
-            </h1>
+            {/* Right Column: Blended High-Resolution Hero Visual */}
+            <div className="md:col-span-5 relative w-full h-[280px] sm:h-[340px] md:h-[380px] lg:h-[440px] xl:h-[480px] max-h-[calc(100vh-200px)] flex items-center justify-center">
+              <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
+                <Image
+                  src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1200&q=85"
+                  alt="Mono Filio Teapot Candlelight Afternoon Tea Ritual"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 45vw, 500px"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                />
+                {/* Seamless Edge Gradient Masks blending smoothly into the dark navy palette */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0C2340]/60 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0C2340]/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/15 rounded-2xl pointer-events-none" />
 
-            <p className="text-sm sm:text-base text-white/85 leading-relaxed font-light max-w-xl">
-              Elevating the afternoon tea ritual from routine into mindful luxury. Explore German-engineered <strong>Mono Filio</strong> teaware, artisanal French flax linens, rare single-estate harvests, and turnkey event styling in Hong Kong.
-            </p>
-
-            {/* CTAs */}
-            <div className="pt-4 flex flex-col sm:flex-row gap-4">
-              <Link href="/shop" className="btn-luxury-gold text-xs px-8 py-4">
-                <span>Explore The Collection</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-
-              <Link
-                href="/custom-hamper"
-                className="btn-luxury-outline text-xs px-8 py-4 bg-white/10 text-white border-white/60 hover:bg-white hover:text-[#0C2340]"
-              >
-                <Gift className="w-4 h-4 text-[#C5A880]" />
-                <span>Curate Bespoke Hamper</span>
-              </Link>
-            </div>
-
-            {/* Trust Badges */}
-            <div className="pt-8 grid grid-cols-3 gap-6 border-t border-white/15 text-xs text-white/75">
-              <div>
-                <p className="font-serif text-base font-semibold text-white">Mono Germany</p>
-                <p className="text-[11px] text-white/60">Exclusive HK Partner</p>
-              </div>
-              <div>
-                <p className="font-serif text-base font-semibold text-white">100% French Flax</p>
-                <p className="text-[11px] text-white/60">Hand-Embroidered</p>
-              </div>
-              <div>
-                <p className="font-serif text-base font-semibold text-white">Central Atelier</p>
-                <p className="text-[11px] text-white/60">148 Queen&apos;s Road</p>
+                {/* Floating Editorial Badge */}
+                <div className="absolute bottom-4 left-4 right-4 p-3 sm:p-3.5 rounded-xl bg-[#081629]/92 backdrop-blur-md border border-[#C5A880]/30 shadow-xl">
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="min-w-0">
+                      <span className="text-[9px] uppercase font-bold tracking-widest text-[#C5A880]">
+                        Bauhaus Design Classic
+                      </span>
+                      <p className="font-serif text-xs sm:text-sm font-semibold text-white truncate">
+                        Mono Filio Teapot &amp; Warmer
+                      </p>
+                      <p className="text-[10px] sm:text-[11px] text-white/70 truncate">Permanent Collection, Design Museum London</p>
+                    </div>
+                    <Link
+                      href="/shop/teapots-and-accessories"
+                      className="shrink-0 p-2 sm:p-2.5 rounded-full bg-[#C5A880] text-[#0C2340] hover:bg-white transition-colors"
+                      aria-label="View Mono Filio Teapots"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -274,7 +300,7 @@ export default function HomePage() {
 
                 <Link
                   href="/our-story"
-                  className="btn-luxury-outline text-xs py-3.5 px-6 bg-transparent text-white border-white/40 hover:bg-white hover:text-[#0C2340]"
+                  className="btn-luxury-outline-light text-xs py-3.5 px-6"
                 >
                   <span>Read The Mono Heritage</span>
                 </Link>
@@ -340,25 +366,76 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. Curate Your Afternoon Tea Hamper Preview Banner */}
+      {/* 6. Curate Your Afternoon Tea Hamper Preview Banner - Upgraded 2-Column Luxury Showcase */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="relative rounded-xl overflow-hidden bg-gradient-to-r from-[#0C2340] via-[#16325C] to-[#0C2340] p-8 sm:p-14 text-white shadow-xl border border-[#C5A880]/30">
-          <div className="max-w-xl space-y-4">
-            <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#C5A880]">
-              The Bespoke Hamper Studio
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-serif text-white">
-              Curate a Personalized Teatime Keepsake
-            </h2>
-            <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-light">
-              Select your presentation trunk, choose a centerpiece Mono Filio teapot, pair with single-origin teas, and add hand-embroidered linens with our complimentary calligraphy note service.
-            </p>
+        <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#0C2340] via-[#142E54] to-[#081629] p-8 sm:p-12 lg:p-14 text-white shadow-2xl border border-[#C5A880]/35">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left Content */}
+            <div className="lg:col-span-7 space-y-5">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C5A880]/15 border border-[#C5A880]/40 text-amber-200 text-xs font-semibold">
+                <Gift className="w-3.5 h-3.5 text-[#C5A880]" />
+                <span>The Bespoke Hamper Studio</span>
+              </div>
 
-            <div className="pt-2">
-              <Link href="/custom-hamper" className="btn-luxury-gold text-xs py-3.5 px-8">
-                <span>Enter The Hamper Studio</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-white leading-tight">
+                Curate a Personalized Teatime Keepsake
+              </h2>
+
+              <p className="text-xs sm:text-sm text-white/85 leading-relaxed font-light max-w-xl">
+                Design an unforgettable luxury gift. Choose an artisan presentation trunk, select a centerpiece German-engineered Mono Filio teapot, pair with single-origin teas, and personalize with hand-embroidered French flax linens and wax-sealed calligraphy notes.
+              </p>
+
+              {/* 4-Step Checklist */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-white/90">
+                <div className="flex items-center gap-2.5">
+                  <span className="w-5 h-5 rounded-full bg-[#C5A880]/20 text-amber-200 flex items-center justify-center text-[10px] font-bold border border-[#C5A880]/40">1</span>
+                  <span>Signature Presentation Trunk</span>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <span className="w-5 h-5 rounded-full bg-[#C5A880]/20 text-amber-200 flex items-center justify-center text-[10px] font-bold border border-[#C5A880]/40">2</span>
+                  <span>Centerpiece Mono Filio Teapot</span>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <span className="w-5 h-5 rounded-full bg-[#C5A880]/20 text-amber-200 flex items-center justify-center text-[10px] font-bold border border-[#C5A880]/40">3</span>
+                  <span>Rare Single-Estate Teas</span>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <span className="w-5 h-5 rounded-full bg-[#C5A880]/20 text-amber-200 flex items-center justify-center text-[10px] font-bold border border-[#C5A880]/40">4</span>
+                  <span>Handwritten Calligraphy Card</span>
+                </div>
+              </div>
+
+              <div className="pt-4 flex flex-col sm:flex-row gap-4">
+                <Link href="/custom-hamper" className="btn-luxury-gold text-xs py-3.5 px-8">
+                  <span>Enter The Hamper Studio</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="/shop/gift-boxes-and-hampers"
+                  className="btn-luxury-outline-light text-xs py-3.5 px-6"
+                >
+                  <span>Explore Pre-Curated Trunks</span>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Showcase Image */}
+            <div className="lg:col-span-5 relative w-full h-[300px] sm:h-[360px] lg:h-[400px] rounded-xl overflow-hidden shadow-2xl border border-white/20 group">
+              <Image
+                src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=900&q=85"
+                alt="Luxury Time for Tea HK Bespoke Gift Hamper Trunk"
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0C2340]/80 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-[#081629]/80 backdrop-blur-md border border-[#C5A880]/40 text-amber-200 text-[10px] font-bold uppercase tracking-wider">
+                Bespoke Keepsake
+              </div>
+              <div className="absolute bottom-4 left-4 right-4 p-3 rounded-lg bg-black/40 backdrop-blur-md text-white text-[11px] border border-white/10 flex items-center justify-between">
+                <span>Tailored Corporate &amp; Wedding Gifting</span>
+                <span className="text-[#C5A880] font-semibold">From HK$ 1,280</span>
+              </div>
             </div>
           </div>
         </div>

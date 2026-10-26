@@ -1,17 +1,38 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface LogoProps {
   variant?: 'light' | 'dark';
   showSubtitle?: boolean;
   className?: string;
+  onClick?: () => void;
 }
 
-export function Logo({ variant = 'dark', showSubtitle = true, className = '' }: LogoProps) {
+export function Logo({ variant = 'dark', showSubtitle = true, className = '', onClick }: LogoProps) {
+  const pathname = usePathname();
   const isLight = variant === 'light';
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (onClick) {
+      onClick();
+    }
+    // If user is already on homepage, scroll smoothly back to top
+    if (pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <Link href="/" className={`inline-flex items-center gap-2.5 sm:gap-3 group shrink-0 ${className}`}>
+    <Link
+      href="/"
+      onClick={handleClick}
+      className={`inline-flex items-center gap-2.5 sm:gap-3 group shrink-0 cursor-pointer ${className}`}
+      aria-label="Time for Tea HK - Home"
+    >
       {/* Heraldic Teapot & Botanical Crest SVG */}
       <div
         className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105 ${

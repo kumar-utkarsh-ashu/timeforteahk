@@ -70,9 +70,9 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 bg-white border-b border-[#E8E4DC] shadow-xs">
+      <header className="sticky top-0 z-40 bg-[#0C2340] text-white border-b border-[#1A3B6B] shadow-md">
         {/* Top Utility Announcement Bar */}
-        <div className="bg-[#0C2340] text-white text-[11px] py-2 px-4 sm:px-6 lg:px-8 border-b border-[#1A3B6B]">
+        <div className="bg-[#081629] text-white text-[11px] py-2 px-4 sm:px-6 lg:px-8 border-b border-[#16325C]">
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
             {/* Showroom & Announcement */}
             <div className="flex items-center gap-4 truncate">
@@ -130,24 +130,30 @@ export function Header() {
           {/* Mobile/Tablet Menu Toggle (Visible up to lg: 1024px) */}
           <button
             onClick={() => setIsMobileNavOpen(true)}
-            className="lg:hidden p-2 -ml-2 text-[#0C2340] hover:text-[#C5A880] transition-colors"
+            className="lg:hidden p-2 -ml-2 text-white hover:text-[#C5A880] transition-colors"
             aria-label="Open navigation menu"
           >
             <Menu className="w-6 h-6" />
           </button>
 
-          {/* Logo */}
-          <Logo variant="dark" />
+          {/* Logo (Light/Gold for seamless luxury theme) */}
+          <Logo variant="light" />
 
           {/* Clean Desktop Navigation Menu (Visible on lg: 1024px+ screens) */}
-          <nav className="hidden lg:flex items-center gap-3.5 xl:gap-6 2xl:gap-8 text-[11px] xl:text-xs font-semibold uppercase tracking-wider text-[#0C2340] whitespace-nowrap">
+          <nav className="hidden lg:flex items-center gap-3.5 xl:gap-6 2xl:gap-8 text-[11px] xl:text-xs font-semibold uppercase tracking-wider text-white/90 whitespace-nowrap">
             <Link
               href="/"
+              onClick={(e) => {
+                if (pathname === '/') {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              }}
               className={`hover:text-[#C5A880] transition-colors py-1 whitespace-nowrap ${
                 pathname === '/' ? 'text-[#C5A880] border-b-2 border-[#C5A880]' : ''
               }`}
             >
-              Home
+              HOME
             </Link>
 
             {/* SHOP Dropdown Link */}
@@ -160,49 +166,49 @@ export function Header() {
               <button
                 type="button"
                 onClick={() => setIsShopDropdownOpen(!isShopDropdownOpen)}
-                className={`hover:text-[#C5A880] transition-colors flex items-center gap-1 cursor-pointer py-1 ${
+                className={`hover:text-[#C5A880] transition-colors flex items-center gap-1 cursor-pointer py-1 uppercase tracking-wider ${
                   pathname.startsWith('/shop') || pathname === '/custom-hamper'
                     ? 'text-[#C5A880] border-b-2 border-[#C5A880]'
-                    : ''
+                    : 'text-white/90'
                 }`}
                 aria-expanded={isShopDropdownOpen}
               >
                 <Link href="/shop" onClick={(e) => e.stopPropagation()} className="hover:text-[#C5A880]">
-                  Shop
+                  SHOP
                 </Link>
                 <ChevronDown
-                  className={`w-3.5 h-3.5 text-[#A38458] transition-transform ${
+                  className={`w-3.5 h-3.5 text-[#C5A880] transition-transform ${
                     isShopDropdownOpen ? 'rotate-180' : ''
                   }`}
                 />
               </button>
 
-              {/* Mega-Dropdown Panel */}
+              {/* Mega-Dropdown Panel: Clean 2-column category grid without awkward product card */}
               {isShopDropdownOpen && (
                 <div
-                  className="absolute top-full -left-12 xl:left-0 pt-3 w-[700px] xl:w-[720px] max-w-[calc(100vw-32px)] z-50 animate-in fade-in zoom-in-95 duration-150"
+                  className="absolute top-full -left-6 xl:left-0 pt-3 w-[560px] max-w-[calc(100vw-32px)] z-50 animate-in fade-in zoom-in-95 duration-150"
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="bg-white rounded-lg shadow-2xl border border-[#E8E4DC] p-6 grid grid-cols-12 gap-6">
-                    {/* Left 8 Cols: Grouped Category Links */}
-                    <div className="col-span-8 grid grid-cols-2 gap-4">
-                      <div className="space-y-3">
+                  <div className="bg-white rounded-lg shadow-2xl border border-[#E8E4DC] p-5">
+                    <div className="grid grid-cols-2 gap-3.5">
+                      {/* Left Column */}
+                      <div className="space-y-2">
                         <Link
                           href="/shop"
-                          className="block p-2 rounded hover:bg-[#FAF8F5] transition-colors group"
+                          className="block p-2.5 rounded-md hover:bg-[#FAF8F5] transition-colors group"
                         >
                           <p className="text-xs font-serif font-bold text-[#0C2340] group-hover:text-[#A38458]">
                             All Products
                           </p>
                           <p className="text-[11px] text-[#6B7280] normal-case mt-0.5">
-                            Browse full afternoon tea collection
+                            Complete afternoon tea collection
                           </p>
                         </Link>
 
                         <Link
                           href="/shop/teapots-and-accessories"
-                          className="block p-2 rounded hover:bg-[#FAF8F5] transition-colors group"
+                          className="block p-2.5 rounded-md hover:bg-[#FAF8F5] transition-colors group"
                         >
                           <div className="flex items-center gap-1.5">
                             <p className="text-xs font-serif font-bold text-[#0C2340] group-hover:text-[#A38458]">
@@ -219,10 +225,10 @@ export function Header() {
 
                         <Link
                           href="/shop/tableware"
-                          className="block p-2 rounded hover:bg-[#FAF8F5] transition-colors group"
+                          className="block p-2.5 rounded-md hover:bg-[#FAF8F5] transition-colors group"
                         >
                           <p className="text-xs font-serif font-bold text-[#0C2340] group-hover:text-[#A38458]">
-                            Plates & Tableware
+                            Fine Tableware & Plates
                           </p>
                           <p className="text-[11px] text-[#6B7280] normal-case mt-0.5">
                             Oriental Blossom bone china
@@ -231,10 +237,10 @@ export function Header() {
 
                         <Link
                           href="/shop/table-linen"
-                          className="block p-2 rounded hover:bg-[#FAF8F5] transition-colors group"
+                          className="block p-2.5 rounded-md hover:bg-[#FAF8F5] transition-colors group"
                         >
                           <p className="text-xs font-serif font-bold text-[#0C2340] group-hover:text-[#A38458]">
-                            Table Linen
+                            Table Linen Atelier
                           </p>
                           <p className="text-[11px] text-[#6B7280] normal-case mt-0.5">
                             Hand-embroidered French flax
@@ -242,51 +248,52 @@ export function Header() {
                         </Link>
                       </div>
 
-                      <div className="space-y-3">
+                      {/* Right Column */}
+                      <div className="space-y-2">
                         <Link
                           href="/shop/tea"
-                          className="block p-2 rounded hover:bg-[#FAF8F5] transition-colors group"
+                          className="block p-2.5 rounded-md hover:bg-[#FAF8F5] transition-colors group"
                         >
                           <p className="text-xs font-serif font-bold text-[#0C2340] group-hover:text-[#A38458]">
                             Loose Leaf Tea
                           </p>
                           <p className="text-[11px] text-[#6B7280] normal-case mt-0.5">
-                            Rare High Mountain Oolongs
+                            Single-origin high mountain harvests
                           </p>
                         </Link>
 
                         <Link
                           href="/shop/gift-boxes"
-                          className="block p-2 rounded hover:bg-[#FAF8F5] transition-colors group"
+                          className="block p-2.5 rounded-md hover:bg-[#FAF8F5] transition-colors group"
                         >
                           <p className="text-xs font-serif font-bold text-[#0C2340] group-hover:text-[#A38458]">
                             Gift Boxes & Hampers
                           </p>
                           <p className="text-[11px] text-[#6B7280] normal-case mt-0.5">
-                            Gold-embossed royal trunks
+                            Gold-embossed royal presentation trunks
                           </p>
                         </Link>
 
                         <Link
                           href="/custom-hamper"
-                          className="block p-2 rounded hover:bg-[#FAF8F5] transition-colors group"
+                          className="block p-2.5 rounded-md hover:bg-[#FAF8F5] transition-colors group"
                         >
                           <div className="flex items-center gap-1.5">
                             <p className="text-xs font-serif font-bold text-[#0C2340] group-hover:text-[#A38458]">
-                              Curate Hamper
+                              Curate Bespoke Hamper
                             </p>
                             <span className="text-[9px] px-1.5 py-0.2 rounded bg-[#FAF5EE] text-[#A38458] border border-[#E0CEB5]">
                               Studio
                             </span>
                           </div>
                           <p className="text-[11px] text-[#6B7280] normal-case mt-0.5">
-                            Interactive custom gift builder
+                            Interactive custom gift curation
                           </p>
                         </Link>
 
                         <Link
                           href="/shop/pinkribbon"
-                          className="block p-2 rounded hover:bg-[#FAF8F5] transition-colors group"
+                          className="block p-2.5 rounded-md hover:bg-[#FAF8F5] transition-colors group"
                         >
                           <div className="flex items-center gap-1.5">
                             <p className="text-xs font-serif font-bold text-[#0C2340] group-hover:text-[#A38458]">
@@ -303,35 +310,12 @@ export function Header() {
                       </div>
                     </div>
 
-                    {/* Right 4 Cols: Featured Visual Teapot Spotlight Card */}
-                    <div className="col-span-4 bg-[#FAF8F5] p-4 rounded-lg border border-[#E8E4DC] flex flex-col justify-between">
-                      <div>
-                        <div className="relative aspect-4/3 rounded overflow-hidden mb-2.5">
-                          <Image
-                            src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=400&q=80"
-                            alt="Mono Filio Teapot"
-                            fill
-                            sizes="200px"
-                            className="object-cover"
-                          />
-                        </div>
-                        <span className="text-[9px] uppercase font-bold tracking-wider text-[#A38458]">
-                          Design Icon
-                        </span>
-                        <h4 className="text-xs font-serif font-bold text-[#0C2340] mt-0.5">
-                          Mono Filio Teapot (1.5L)
-                        </h4>
-                        <p className="text-[11px] text-[#6B7280] normal-case mt-1">
-                          With integrated candlelight warmer base.
-                        </p>
-                      </div>
-
-                      <Link
-                        href="/shop/product/mono-filio-teapot-1-5l-with-warmer"
-                        className="text-[11px] font-bold text-[#0C2340] hover:text-[#C5A880] flex items-center gap-1 pt-2 normal-case"
-                      >
-                        <span>View Details</span>
-                        <ArrowRight className="w-3 h-3" />
+                    {/* Bottom Strip */}
+                    <div className="mt-3.5 pt-3 border-t border-[#E8E4DC] flex items-center justify-between text-[11px] text-[#6B7280] normal-case">
+                      <span>Showroom appointments & complimentary delivery over HK$ 800</span>
+                      <Link href="/shop" className="text-[#0C2340] font-bold hover:text-[#C5A880] flex items-center gap-1">
+                        <span>View All Products</span>
+                        <ArrowRight className="w-3 h-3 text-[#C5A880]" />
                       </Link>
                     </div>
                   </div>
@@ -345,7 +329,7 @@ export function Header() {
                 pathname === '/event-styling' ? 'text-[#C5A880] border-b-2 border-[#C5A880]' : ''
               }`}
             >
-              Event Styling
+              EVENT STYLING
             </Link>
 
             <Link
@@ -354,7 +338,7 @@ export function Header() {
                 pathname === '/our-story' ? 'text-[#C5A880] border-b-2 border-[#C5A880]' : ''
               }`}
             >
-              Our Story
+              OUR STORY
             </Link>
 
             <Link
@@ -363,7 +347,7 @@ export function Header() {
                 pathname === '/gallery' ? 'text-[#C5A880] border-b-2 border-[#C5A880]' : ''
               }`}
             >
-              Gallery
+              GALLERY
             </Link>
 
             <Link
@@ -372,7 +356,7 @@ export function Header() {
                 pathname === '/blog' ? 'text-[#C5A880] border-b-2 border-[#C5A880]' : ''
               }`}
             >
-              Blog
+              BLOG
             </Link>
 
             <Link
@@ -381,7 +365,7 @@ export function Header() {
                 pathname === '/get-in-touch' ? 'text-[#C5A880] border-b-2 border-[#C5A880]' : ''
               }`}
             >
-              Get in Touch
+              GET IN TOUCH
             </Link>
           </nav>
 
@@ -390,7 +374,7 @@ export function Header() {
             {/* Search Trigger */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="p-1.5 sm:p-2 text-[#0C2340] hover:text-[#C5A880] transition-colors rounded-full hover:bg-[#FAF8F5]"
+              className="p-1.5 sm:p-2 text-white/90 hover:text-[#C5A880] hover:bg-white/10 transition-colors rounded-full"
               aria-label="Search"
             >
               <Search className="w-5 h-5" />
@@ -399,7 +383,7 @@ export function Header() {
             {/* Wishlist Indicator */}
             <Link
               href="/shop"
-              className="p-1.5 sm:p-2 text-[#0C2340] hover:text-[#C5A880] transition-colors rounded-full hover:bg-[#FAF8F5] relative"
+              className="p-1.5 sm:p-2 text-white/90 hover:text-[#C5A880] hover:bg-white/10 transition-colors rounded-full relative"
               aria-label="Wishlist"
             >
               <Heart className="w-5 h-5" />
@@ -413,18 +397,18 @@ export function Header() {
             {/* Shopping Bag Trigger with dynamic subtotal */}
             <button
               onClick={() => setIsCartOpen(true)}
-              className="flex items-center gap-2 p-1.5 sm:px-3 sm:py-2 rounded bg-[#FAF8F5] border border-[#E8E4DC] hover:border-[#C5A880] transition-all text-[#0C2340]"
+              className="flex items-center gap-2 p-1.5 sm:px-3 sm:py-2 rounded bg-[#16325C] border border-[#20457A] hover:border-[#C5A880] hover:bg-[#1E4378] transition-all text-white"
               aria-label="Shopping Cart"
             >
               <div className="relative">
-                <ShoppingBag className="w-5 h-5 text-[#0C2340]" />
+                <ShoppingBag className="w-5 h-5 text-amber-200" />
                 {cartCount > 0 && (
-                  <span className="absolute -top-1.5 -right-2 w-4 h-4 rounded-full bg-[#0C2340] text-white text-[9px] font-bold flex items-center justify-center">
+                  <span className="absolute -top-1.5 -right-2 w-4 h-4 rounded-full bg-[#C5A880] text-[#0C2340] text-[9px] font-bold flex items-center justify-center">
                     {cartCount}
                   </span>
                 )}
               </div>
-              <span className="hidden xl:inline text-xs font-bold text-[#0C2340]">
+              <span className="hidden xl:inline text-xs font-bold text-white">
                 {formatPrice(subtotalHKD, subtotalGBP)}
               </span>
             </button>
