@@ -46,29 +46,32 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
   // Initialize with initial sample cart item for preview richness
   useEffect(() => {
-    try {
-      const savedCart = localStorage.getItem('t4t_cart');
-      if (savedCart) {
-        setCart(JSON.parse(savedCart));
-      } else {
-        // Pre-populate with one item so the user can immediately experience the cart
-        const sample = PRODUCTS.find((p) => p.id === 'mono-filio-1-5l');
-        if (sample) {
-          setCart([{ product: sample, quantity: 1, selectedVariant: '1.5 Litre (Standard)' }]);
+    // Schedule on microtask to avoid cascading renders warning in React 19
+    queueMicrotask(() => {
+      try {
+        const savedCart = localStorage.getItem('t4t_cart');
+        if (savedCart) {
+          setCart(JSON.parse(savedCart));
+        } else {
+          // Pre-populate with one item so the user can immediately experience the cart
+          const sample = PRODUCTS.find((p) => p.id === 'mono-filio-1-5l');
+          if (sample) {
+            setCart([{ product: sample, quantity: 1, selectedVariant: '1.5 Litre (Standard)' }]);
+          }
         }
-      }
 
-      const savedWishlist = localStorage.getItem('t4t_wishlist');
-      if (savedWishlist) {
-        setWishlist(JSON.parse(savedWishlist));
+        const savedWishlist = localStorage.getItem('t4t_wishlist');
+        if (savedWishlist) {
+          setWishlist(JSON.parse(savedWishlist));
+        }
+        const savedCurrency = localStorage.getItem('t4t_currency') as 'HKD' | 'GBP';
+        if (savedCurrency) {
+          setCurrency(savedCurrency);
+        }
+      } catch {
+        // Ignore SSR/storage errors
       }
-      const savedCurrency = localStorage.getItem('t4t_currency') as 'HKD' | 'GBP';
-      if (savedCurrency) {
-        setCurrency(savedCurrency);
-      }
-    } catch {
-      // Ignore SSR/storage errors
-    }
+    });
   }, []);
 
   const handleSetCurrency = (c: 'HKD' | 'GBP') => {

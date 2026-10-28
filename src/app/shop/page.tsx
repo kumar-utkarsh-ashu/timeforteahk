@@ -93,7 +93,7 @@ export default function ShopPage() {
               <ArrowUpDown className="w-3.5 h-3.5 text-[#A38458]" />
               <select
                 value={sortBy}
-                onChange={(e) => setSortBy(e.target.value as any)}
+                onChange={(e) => setSortBy(e.target.value as 'featured' | 'price-low' | 'price-high' | 'rating')}
                 aria-label="Sort products"
                 className="p-2 rounded border border-[#E8E4DC] bg-white text-xs text-[#0C2340] outline-none focus:ring-1 focus:ring-[#C5A880]"
               >

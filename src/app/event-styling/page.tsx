@@ -52,7 +52,7 @@ export default function EventStylingPage() {
                 href={SITE_CONFIG.contact.whatsAppLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-luxury-outline text-xs py-3 px-6 bg-white/10 text-white border-white/60 hover:bg-white hover:text-[#0C2340]"
+                className="btn-luxury-outline-light text-xs py-3 px-6"
               >
                 <MessageSquare className="w-4 h-4 text-[#C5A880]" />
                 <span>WhatsApp Event Consultation</span>

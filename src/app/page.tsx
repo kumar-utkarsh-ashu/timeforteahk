@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Sparkles, Shield, Gift, Calendar, ChevronRight } from 'lucide-react';
+import { ArrowRight, Sparkles, Shield, Gift, Calendar, ChevronRight, MessageSquare, Phone } from 'lucide-react';
 import { PRODUCTS } from '@/data/products';
 import { TABLESCAPE_GALLERY } from '@/data/eventPackages';
 import { JOURNAL_POSTS } from '@/data/journalPosts';
@@ -13,13 +13,21 @@ import { TablescapeHotspots } from '@/components/event/TablescapeHotspots';
 import { Badge } from '@/components/ui/Badge';
 
 export default function HomePage() {
-  const featuredTeapots = PRODUCTS.filter((p) => p.categorySlug === 'teapots-and-accessories');
-  const bestsellerProducts = PRODUCTS.filter((p) => p.badge === 'Bestseller' || p.badge === 'Mono Partner');
+  const exceptionalPieces = PRODUCTS.filter((p) =>
+    [
+      'oriental-blossom-dinner-plate',
+      'sunshine-citrus-napkins',
+      '3d-flower-napkin-ring',
+      'oriental-blossom-tea-set-serene-blue',
+      'amber-lattice',
+      'mono-filio-1-5l',
+    ].includes(p.id)
+  );
   const heroTablescape = TABLESCAPE_GALLERY[0];
 
   return (
     <div className="space-y-20 sm:space-y-28 pb-20">
-      {/* 1. Hero Editorial Section - Blended Layout matching Pola Vida reference */}
+      {/* 1. Hero Editorial Section - Blended Layout */}
       <section className="relative min-h-[calc(100vh-100px)] lg:h-[calc(100vh-100px)] lg:max-h-[820px] flex items-center bg-[#0C2340] text-white overflow-hidden">
         {/* Subtle Ambient Background Gradient */}
         <div className="absolute inset-0 bg-radial-at-t from-[#16325C]/40 via-[#0C2340] to-[#081629] pointer-events-none" />
@@ -28,12 +36,17 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-center">
             {/* Left Column: Editorial Headline & CTAs */}
             <div className="md:col-span-7 space-y-4 lg:space-y-5">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C5A880]/15 border border-[#C5A880]/30 text-amber-200 text-xs font-semibold">
+                <Sparkles className="w-3.5 h-3.5 text-[#C5A880]" />
+                <span>Curating the Art of Tea &amp; Entertaining</span>
+              </div>
+
               <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-serif text-white leading-[1.12] tracking-tight">
                 Make Tea Time a Time to Remember.
               </h1>
 
               <p className="text-xs sm:text-sm lg:text-base text-white/85 leading-relaxed font-light max-w-xl">
-                Elevating the afternoon tea ritual from routine into mindful luxury. Explore German-engineered <strong>Mono Filio</strong> teaware, artisanal French flax linens, rare single-estate harvests, and turnkey event styling in Hong Kong.
+                Elevating the afternoon tea ritual from routine into mindful luxury. Explore German-engineered <strong>Mono Filio</strong> teaware, artisanal French flax linens, fine bone china, and turnkey event styling in Hong Kong.
               </p>
 
               {/* CTAs */}
@@ -112,7 +125,42 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. Visual Category Architecture Cards */}
+      {/* 2. Editorial About Us Spotlight */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center bg-[#FAF8F5] rounded-2xl border border-[#E8E4DC] p-6 sm:p-10 lg:p-12 shadow-xs">
+          <div className="lg:col-span-5 relative aspect-4/3 rounded-xl overflow-hidden shadow-md border border-[#E8E4DC] bg-white">
+            <Image
+              src="/images/about-us.png"
+              alt="Curating the Art of Tea and Entertaining"
+              fill
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="lg:col-span-7 space-y-4">
+            <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#C5A880]">
+              About Us
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif text-[#0C2340] leading-snug">
+              Curating the Art of Tea &amp; Entertaining
+            </h2>
+            <p className="text-xs sm:text-sm text-[#5C5C5C] leading-relaxed">
+              Time for Tea brings together beautifully crafted teas, distinctive tableware, elegant linens, and thoughtful accessories designed to elevate the everyday ritual of tea. From quiet afternoon moments to beautifully styled gatherings, discover pieces chosen to make every occasion feel a little more special.
+            </p>
+            <div className="pt-2 flex flex-wrap gap-3">
+              <Link href="/shop" className="btn-luxury-navy text-xs py-3 px-6">
+                <span>Explore Our Collection</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link href="/our-story" className="btn-luxury-outline text-xs py-3 px-6">
+                <span>Read Our Heritage</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Visual Category Architecture Cards */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="text-center max-w-xl mx-auto space-y-2 mb-10">
           <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#C5A880]">
@@ -340,29 +388,151 @@ export default function HomePage() {
         />
       </section>
 
-      {/* 5. Bestseller Showcase Grid */}
+      {/* 5. Exceptional Pieces, Thoughtfully Curated Showcase Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
             <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#C5A880]">
-              Most Treasured Pieces
+              ~ Products ~
             </span>
-            <h2 className="text-3xl font-serif text-[#0C2340] mt-1">The Connoisseur’s Edit</h2>
+            <h2 className="text-3xl sm:text-4xl font-serif text-[#0C2340] mt-1">Exceptional Pieces, Thoughtfully Curated</h2>
+            <p className="text-xs text-[#6B7280] mt-1">Bespoke teaware, hand-embroidered linens, and porcelain tableware.</p>
           </div>
 
           <Link
             href="/shop"
             className="text-xs font-semibold text-[#0C2340] hover:text-[#C5A880] flex items-center gap-1.5 transition-colors"
           >
-            <span>View All 12 Products</span>
+            <span>View Complete Collection</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {bestsellerProducts.slice(0, 4).map((product) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {exceptionalPieces.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
+        </div>
+      </section>
+
+      {/* 6. Services: What We Do */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8">
+        <div className="text-center max-w-xl mx-auto space-y-2 mb-10">
+          <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#C5A880]">
+            Services
+          </span>
+          <h2 className="text-3xl font-serif text-[#0C2340]">What We Do</h2>
+          <p className="text-xs text-[#6B7280]">
+            Bespoke curation, exclusive teaware distribution, and turnkey hospitality styling.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="p-7 rounded-xl bg-white border border-[#E8E4DC] card-luxury text-center space-y-4">
+            <div className="relative w-24 h-24 mx-auto rounded-full overflow-hidden bg-[#FAF8F5] p-2 border border-[#E8E4DC]">
+              <Image
+                src="/images/tea-service.png"
+                alt="Teapots and Teas"
+                fill
+                className="object-contain p-2"
+              />
+            </div>
+            <h3 className="font-serif text-lg font-semibold text-[#0C2340]">Teapots &amp; Teas</h3>
+            <p className="text-xs text-[#6B7280] leading-relaxed">
+              Time for Tea is the exclusive distributor in Hong Kong of the German Mono Filio Teapots, paired with rare single-origin harvests.
+            </p>
+            <div>
+              <Link href="/shop/teapots-and-accessories" className="inline-flex items-center gap-1 text-xs font-semibold text-[#0C2340] hover:text-[#C5A880]">
+                <span>See Now</span> <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </div>
+
+          <div className="p-7 rounded-xl bg-white border border-[#E8E4DC] card-luxury text-center space-y-4">
+            <div className="relative w-24 h-24 mx-auto rounded-full overflow-hidden bg-[#FAF8F5] p-2 border border-[#E8E4DC]">
+              <Image
+                src="/images/tableware-service.png"
+                alt="Tableware"
+                fill
+                className="object-contain p-2"
+              />
+            </div>
+            <h3 className="font-serif text-lg font-semibold text-[#0C2340]">Tableware</h3>
+            <p className="text-xs text-[#6B7280] leading-relaxed">
+              Bespoke fine bone china and tiered cake stands to make your table setting memorable for every celebratory occasion.
+            </p>
+            <div>
+              <Link href="/shop/tableware" className="inline-flex items-center gap-1 text-xs font-semibold text-[#0C2340] hover:text-[#C5A880]">
+                <span>See Now</span> <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </div>
+
+          <div className="p-7 rounded-xl bg-white border border-[#E8E4DC] card-luxury text-center space-y-4">
+            <div className="relative w-24 h-24 mx-auto rounded-full overflow-hidden bg-[#FAF8F5] p-2 border border-[#E8E4DC]">
+              <Image
+                src="/images/table-linen-service.png"
+                alt="Table Linen"
+                fill
+                className="object-contain p-2"
+              />
+            </div>
+            <h3 className="font-serif text-lg font-semibold text-[#0C2340]">Table Linen</h3>
+            <p className="text-xs text-[#6B7280] leading-relaxed">
+              Time for Tea has procured its own line of pre-washed 100% French flax linen with hand-embroidered botanical details.
+            </p>
+            <div>
+              <Link href="/shop/table-linen" className="inline-flex items-center gap-1 text-xs font-semibold text-[#0C2340] hover:text-[#C5A880]">
+                <span>See Now</span> <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. Helpline / Concierge Banner */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8">
+        <div className="relative rounded-2xl overflow-hidden bg-[#0C2340] text-white p-8 sm:p-12 border border-[#C5A880]/30 shadow-xl">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div className="md:col-span-7 space-y-3">
+              <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#C5A880]">
+                Any Question?
+              </span>
+              <h3 className="text-2xl sm:text-4xl font-serif text-white">
+                (+852) 9865 6217
+              </h3>
+              <p className="text-xs sm:text-sm text-white/80 max-w-lg leading-relaxed font-light">
+                Should you have any questions, we would be delighted to help. Simply message our concierge on WhatsApp or telephone our Central showroom team directly.
+              </p>
+              <div className="pt-2 flex flex-wrap gap-3">
+                <a
+                  href="tel:+85298656217"
+                  className="btn-luxury-gold text-xs py-3 px-6"
+                >
+                  <Phone className="w-3.5 h-3.5" />
+                  <span>Make A Call</span>
+                </a>
+                <a
+                  href={SITE_CONFIG.contact.whatsAppLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-luxury-outline-light text-xs py-3 px-6"
+                >
+                  <MessageSquare className="w-3.5 h-3.5 text-[#C5A880]" />
+                  <span>Contact Us (WhatsApp)</span>
+                </a>
+              </div>
+            </div>
+            <div className="md:col-span-5 relative h-52 sm:h-64 rounded-xl overflow-hidden border border-white/10 hidden md:block">
+              <Image
+                src="/images/any-question.png"
+                alt="Time for Tea Concierge Helpline"
+                fill
+                sizes="35vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

@@ -36,8 +36,6 @@ export function TablescapeHotspots({
     .map((h) => PRODUCTS.find((p) => p.slug === h.slug))
     .filter(Boolean);
 
-  const activeProduct = PRODUCTS.find((p) => p.slug === activeSlug) || featuredProducts[0];
-
   return (
     <div className="bg-white rounded-xl border border-[#E8E4DC] overflow-hidden shadow-sm">
       <div className="grid grid-cols-1 xl:grid-cols-12 items-stretch">

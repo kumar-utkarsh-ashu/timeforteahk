@@ -2,7 +2,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import {
   Search,
@@ -13,7 +12,6 @@ import {
   MapPin,
   ChevronDown,
   ArrowRight,
-  Sparkles,
 } from 'lucide-react';
 import { useApp } from '@/context/AppContext';
 import { SITE_CONFIG } from '@/data/siteConfig';
@@ -51,7 +49,10 @@ export function Header() {
   };
 
   useEffect(() => {
-    setIsShopDropdownOpen(false);
+    // Schedule on microtask to prevent synchronous cascading render warning
+    queueMicrotask(() => {
+      setIsShopDropdownOpen(false);
+    });
   }, [pathname]);
 
   // Click outside listener for touch devices & clicking away
