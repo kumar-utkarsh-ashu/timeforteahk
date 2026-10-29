@@ -12,7 +12,7 @@ interface LogoProps {
   onClick?: () => void;
 }
 
-export function Logo({ variant = 'dark', showSubtitle = false, className = '', onClick }: LogoProps) {
+export function Logo({ variant = 'dark', showSubtitle = true, className = '', onClick }: LogoProps) {
   const pathname = usePathname();
   const isLight = variant === 'light';
 
@@ -35,20 +35,20 @@ export function Logo({ variant = 'dark', showSubtitle = false, className = '', o
       aria-label="Time for Tea HK - Home"
     >
       {/* Official Brand Logo */}
-      <div className="relative h-12 sm:h-14 lg:h-16 w-44 sm:w-52 lg:w-60 shrink-0 transition-transform duration-300 group-hover:scale-102">
+      <div className="relative h-11 sm:h-12 w-28 sm:w-32 shrink-0 transition-transform duration-300 group-hover:scale-102">
         <Image
           src="/images/logo.png"
           alt="Time for Tea HK"
           fill
           priority
-          sizes="(max-width: 640px) 176px, (max-width: 1024px) 208px, 240px"
+          sizes="(max-width: 640px) 112px, 128px"
           className="object-contain object-left"
         />
       </div>
 
       {showSubtitle && (
         <span
-          className={`hidden md:block text-[10px] tracking-[0.25em] uppercase font-medium pl-3 border-l border-white/20 whitespace-nowrap ${
+          className={`hidden md:block text-[9px] tracking-[0.2em] uppercase font-medium pl-2 border-l border-white/20 whitespace-nowrap ${
             isLight ? 'text-amber-200/80' : 'text-[#A38458]'
           }`}
         >
