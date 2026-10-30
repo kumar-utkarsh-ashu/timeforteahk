@@ -20,12 +20,12 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-[#0C2340] text-white pt-16 pb-12 border-t border-[#1A3B6B]">
+    <footer className="bg-[#00225A] text-white pt-16 pb-12 border-t border-[#00358A]">
       {/* Newsletter Strip */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 pb-14 border-b border-white/10">
-        <div className="bg-gradient-to-r from-[#16325C] to-[#0C2340] p-8 md:p-10 rounded-lg border border-[#C5A880]/30 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-xl">
+        <div className="bg-gradient-to-r from-[#00358A] to-[#00225A] p-8 md:p-10 rounded-lg border border-[#D1A345]/30 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-xl">
           <div className="max-w-xl text-center lg:text-left">
-            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C5A880]">
+            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#D1A345]">
               The Teatime Society
             </span>
             <h3 className="text-2xl sm:text-3xl font-serif text-white mt-1">
@@ -38,14 +38,14 @@ export function Footer() {
 
           <form onSubmit={handleSubscribe} className="w-full lg:w-auto flex flex-col sm:flex-row gap-2.5">
             <div className="relative">
-              <Mail className="w-4 h-4 text-[#A38458] absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Mail className="w-4 h-4 text-[#B88A2D] absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="email"
                 required
                 placeholder="Enter your email address..."
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full sm:w-72 pl-10 pr-4 py-3 rounded text-xs bg-white text-[#0C2340] placeholder-[#9CA3AF] outline-none focus:ring-2 focus:ring-[#C5A880]"
+                className="w-full sm:w-72 pl-10 pr-4 py-3 rounded text-xs bg-white text-[#00225A] placeholder-[#9CA3AF] outline-none focus:ring-2 focus:ring-[#D1A345]"
               />
             </div>
             <button
@@ -81,7 +81,7 @@ export function Footer() {
               href={SITE_CONFIG.contact.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#C5A880] hover:text-[#0C2340] flex items-center justify-center text-white transition-all"
+              className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#D1A345] hover:text-[#00225A] flex items-center justify-center text-white transition-all"
               aria-label="Instagram"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -92,51 +92,56 @@ export function Footer() {
               href={SITE_CONFIG.contact.whatsAppLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#C5A880] hover:text-[#0C2340] flex items-center justify-center text-white transition-all"
+              className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#D1A345] hover:text-[#00225A] flex items-center justify-center text-white transition-all"
               aria-label="WhatsApp"
             >
               <MessageSquare className="w-4 h-4" />
             </a>
           </div>
-          <div className="p-3 bg-white/5 border border-white/10 rounded text-[11px] text-amber-200/80">
+          <div className="p-3 bg-white/5 border border-white/10 rounded text-[11px] text-[#DFBE77]">
             🇩🇪 Official Hong Kong Partner for <strong>Mono Germany</strong> (Mettmann, Est. 1895)
           </div>
         </div>
 
-        {/* Column 2: The Collections */}
+        {/* Column 2: The Collections (Matching Image 2 Taxonomy) */}
         <div className="space-y-3">
-          <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#C5A880]">
+          <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#D1A345]">
             The Collections
           </h4>
           <ul className="space-y-2 text-xs text-white/75">
             <li>
-              <Link href="/shop/teapots-and-accessories" className="hover:text-[#C5A880] transition-colors">
-                Mono Filio Teapots & Warmers
+              <Link href="/shop/tableware" className="hover:text-[#D1A345] transition-colors">
+                Tableware (Plates, Placemats, Rings)
               </Link>
             </li>
             <li>
-              <Link href="/shop/tableware" className="hover:text-[#C5A880] transition-colors">
-                Oriental Blossom Tableware
+              <Link href="/shop/table-linen" className="hover:text-[#D1A345] transition-colors">
+                Handcrafted Table Linen &amp; Napkins
               </Link>
             </li>
             <li>
-              <Link href="/shop/table-linen" className="hover:text-[#C5A880] transition-colors">
-                Handcrafted French Flax Linens
+              <Link href="/shop/teapots-and-accessories" className="hover:text-[#D1A345] transition-colors">
+                Mono Teapots &amp; Accessories
               </Link>
             </li>
             <li>
-              <Link href="/shop/tea" className="hover:text-[#C5A880] transition-colors">
+              <Link href="/shop/tea" className="hover:text-[#D1A345] transition-colors">
                 Single-Origin Loose Leaf Teas
               </Link>
             </li>
             <li>
-              <Link href="/custom-hamper" className="hover:text-[#C5A880] transition-colors">
-                Bespoke Hamper & Gift Studio
+              <Link href="/shop/gift-boxes" className="hover:text-[#D1A345] transition-colors">
+                Curated Gift Boxes &amp; Hampers
               </Link>
             </li>
             <li>
-              <Link href="/shop/pinkribbon" className="hover:text-[#C5A880] transition-colors">
-                Pink Ribbon Charity Collection
+              <Link href="/shop/pinkribbon" className="hover:text-[#D1A345] transition-colors">
+                Pink Ribbon October Charity Collection
+              </Link>
+            </li>
+            <li>
+              <Link href="/shop/christmas" className="hover:text-[#D1A345] transition-colors">
+                Christmas Tableware &amp; Decor (Soon)
               </Link>
             </li>
           </ul>
@@ -144,32 +149,32 @@ export function Footer() {
 
         {/* Column 3: Services & Experiences */}
         <div className="space-y-3">
-          <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#C5A880]">
+          <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#D1A345]">
             Bespoke Services
           </h4>
           <ul className="space-y-2 text-xs text-white/75">
             <li>
-              <Link href="/event-styling" className="hover:text-[#C5A880] transition-colors">
+              <Link href="/event-styling" className="hover:text-[#D1A345] transition-colors">
                 Afternoon Tea Event Styling
               </Link>
             </li>
             <li>
-              <Link href="/gallery" className="hover:text-[#C5A880] transition-colors">
+              <Link href="/gallery" className="hover:text-[#D1A345] transition-colors">
                 Tablescape Gallery Archive
               </Link>
             </li>
             <li>
-              <Link href="/get-in-touch" className="hover:text-[#C5A880] transition-colors">
+              <Link href="/get-in-touch" className="hover:text-[#D1A345] transition-colors">
                 Central Showroom Tasting Appointments
               </Link>
             </li>
             <li>
-              <Link href="/blog" className="hover:text-[#C5A880] transition-colors">
+              <Link href="/blog" className="hover:text-[#D1A345] transition-colors">
                 Tea Journal & Brewing Guides
               </Link>
             </li>
             <li>
-              <Link href="/returns-policy" className="hover:text-[#C5A880] transition-colors">
+              <Link href="/returns-policy" className="hover:text-[#D1A345] transition-colors">
                 Customer Care & Returns Policy
               </Link>
             </li>
@@ -178,20 +183,20 @@ export function Footer() {
 
         {/* Column 4: Showroom & Concierge */}
         <div className="space-y-3">
-          <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#C5A880]">
+          <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#D1A345]">
             Central Showroom
           </h4>
           <div className="space-y-2.5 text-xs text-white/75">
             <div className="flex items-start gap-2">
-              <MapPin className="w-4 h-4 text-[#C5A880] shrink-0 mt-0.5" />
+              <MapPin className="w-4 h-4 text-[#D1A345] shrink-0 mt-0.5" />
               <span>{SITE_CONFIG.showroom.address}</span>
             </div>
             <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-[#C5A880] shrink-0" />
+              <Phone className="w-4 h-4 text-[#D1A345] shrink-0" />
               <span>{SITE_CONFIG.contact.phone}</span>
             </div>
             <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-[#C5A880] shrink-0" />
+              <Mail className="w-4 h-4 text-[#D1A345] shrink-0" />
               <span>{SITE_CONFIG.contact.email}</span>
             </div>
             <p className="text-[11px] text-white/60 pt-1">
@@ -204,7 +209,7 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/60">
         <div className="flex items-center gap-2 text-[11px]">
-          <ShieldCheck className="w-4 h-4 text-[#C5A880]" />
+          <ShieldCheck className="w-4 h-4 text-[#D1A345]" />
           <span>© 2026 Time for Tea Hong Kong Limited. All Rights Reserved.</span>
         </div>
 

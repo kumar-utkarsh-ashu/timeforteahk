@@ -27,15 +27,15 @@ export default function BlogPage() {
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto space-y-3">
         <div className="flex items-center justify-center gap-2 text-xs text-[#6B7280]">
-          <Link href="/" className="hover:text-[#0C2340]">Home</Link>
+          <Link href="/" className="hover:text-[#0048BA]">Home</Link>
           <span>/</span>
-          <span className="text-[#0C2340] font-medium">The Tea Journal</span>
+          <span className="text-[#0048BA] font-medium">The Tea Journal</span>
         </div>
 
-        <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#C5A880]">
-          Brewing Wisdom & Culture
+        <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#D1A345]">
+          Brewing Wisdom &amp; Culture
         </span>
-        <h1 className="text-3xl sm:text-5xl font-serif text-[#0C2340]">
+        <h1 className="text-3xl sm:text-5xl font-serif text-[#0048BA]">
           The Time for Tea Journal
         </h1>
         <p className="text-xs sm:text-sm text-[#5C5C5C] leading-relaxed">
@@ -51,8 +51,8 @@ export default function BlogPage() {
             onClick={() => setSelectedCategory(cat)}
             className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
               selectedCategory === cat
-                ? 'bg-[#0C2340] text-white shadow-sm'
-                : 'bg-white text-[#5C5C5C] border border-[#E8E4DC] hover:border-[#C5A880] hover:text-[#0C2340]'
+                ? 'bg-[#0048BA] text-white shadow-sm'
+                : 'bg-white text-[#5C5C5C] border border-[#E8E4DC] hover:border-[#D1A345] hover:text-[#0048BA]'
             }`}
           >
             {cat}
@@ -77,7 +77,7 @@ export default function BlogPage() {
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute top-4 left-4">
-                <span className="text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded bg-[#0C2340] text-amber-200">
+                <span className="text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded bg-[#0048BA] text-[#DFBE77]">
                   Featured Story
                 </span>
               </div>
@@ -85,7 +85,7 @@ export default function BlogPage() {
 
             <div className="p-8 sm:p-12 flex flex-col justify-between space-y-4">
               <div className="space-y-3">
-                <div className="flex items-center gap-2 text-xs text-[#A38458]">
+                <div className="flex items-center gap-2 text-xs text-[#B88A2D]">
                   <span>{filteredPosts[0].category}</span>
                   <span>•</span>
                   <span>{filteredPosts[0].date}</span>
@@ -93,7 +93,7 @@ export default function BlogPage() {
                   <span>{filteredPosts[0].readTime}</span>
                 </div>
 
-                <h2 className="text-2xl sm:text-3xl font-serif text-[#0C2340] group-hover:text-[#A38458] transition-colors leading-snug">
+                <h2 className="text-2xl sm:text-3xl font-serif text-[#0048BA] group-hover:text-[#B88A2D] transition-colors leading-snug">
                   {filteredPosts[0].title}
                 </h2>
 
@@ -104,7 +104,7 @@ export default function BlogPage() {
 
               <div className="pt-4 border-t border-[#E8E4DC] flex items-center justify-between">
                 <span className="text-xs text-[#6B7280]">By {filteredPosts[0].author}</span>
-                <span className="text-xs font-semibold text-[#0C2340] group-hover:text-[#A38458] flex items-center gap-1">
+                <span className="text-xs font-semibold text-[#0048BA] group-hover:text-[#B88A2D] flex items-center gap-1">
                   Read Full Article <ArrowRight className="w-3.5 h-3.5" />
                 </span>
               </div>
@@ -130,19 +130,19 @@ export default function BlogPage() {
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute top-3 left-3">
-                <span className="text-[9px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-[#0C2340] text-white">
+                <span className="text-[9px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-[#0048BA] text-white">
                   {post.category}
                 </span>
               </div>
             </div>
 
             <div className="p-6 space-y-2.5">
-              <div className="flex items-center gap-2 text-[11px] text-[#A38458]">
+              <div className="flex items-center gap-2 text-[11px] text-[#B88A2D]">
                 <span>{post.date}</span>
                 <span>•</span>
                 <span>{post.readTime}</span>
               </div>
-              <h3 className="text-base font-serif font-semibold text-[#0C2340] group-hover:text-[#A38458] transition-colors line-clamp-2">
+              <h3 className="text-base font-serif font-semibold text-[#0048BA] group-hover:text-[#B88A2D] transition-colors line-clamp-2">
                 {post.title}
               </h3>
               <p className="text-xs text-[#6B7280] line-clamp-3 leading-relaxed">

@@ -49,7 +49,7 @@ export function Logo({ variant = 'dark', showSubtitle = true, className = '', on
       {showSubtitle && (
         <span
           className={`hidden md:block text-[9px] tracking-[0.2em] uppercase font-medium pl-2 border-l border-white/20 whitespace-nowrap ${
-            isLight ? 'text-amber-200/80' : 'text-[#A38458]'
+            isLight ? 'text-[#DFBE77]' : 'text-[#B88A2D]'
           }`}
         >
           Hong Kong

@@ -2,16 +2,16 @@
 
 @layer base {
   :root {
-    /* Luxury Palette */
-    --navy-deep: #0C2340;
-    --navy-royal: #16325C;
-    --navy-midnight: #081629;
-    --navy-soft: #20457A;
+    /* Luxury Palette - Aligned with Live Website (Image 1) */
+    --navy-deep: #0048BA;       /* Primary Royal Blue */
+    --navy-royal: #00358A;      /* Deep Royal Navy */
+    --navy-midnight: #00225A;   /* Midnight Royal Contrast */
+    --navy-soft: #1A5DC8;       /* Soft Royal Accent */
 
-    --gold-champagne: #C5A880;
-    --gold-light: #E0CEB5;
-    --gold-dark: #A38458;
-    --gold-shimmer: #DFC7A5;
+    --gold-champagne: #D1A345;  /* Warm Honey Gold */
+    --gold-light: #EBD6A7;      /* Light Gold Accent */
+    --gold-dark: #B88A2D;       /* Deep Gold / Ochre */
+    --gold-shimmer: #DFBE77;    /* Radiant Gold */
 
     --sage-deep: #436357;
     --sage-soft: #5B8276;
@@ -26,7 +26,7 @@
     --charcoal-body: #3A3D42;
     --charcoal-muted: #6B7280;
     --border-subtle: #E8E4DC;
-    --border-gold: rgba(197, 168, 128, 0.4);
+    --border-gold: rgba(209, 163, 69, 0.4);
 
     --font-serif: "Playfair Display", "Cormorant Garamond", Georgia, serif;
     --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -119,31 +119,31 @@
   color: var(--sage-soft);
 }
 
-/* Gold Foil Button Effect */
+/* Gold Foil Button Effect - Aligned with Existing Site (Image 1) */
 .btn-luxury-gold {
-  background: linear-gradient(135deg, #C5A880 0%, #B8976C 100%);
-  color: #0C2340;
+  background: linear-gradient(135deg, #D1A345 0%, #B88A2D 100%);
+  color: #FFFFFF;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   font-size: 0.8125rem;
   padding: 0.875rem 1.75rem;
   border-radius: 2px;
-  box-shadow: 0 4px 14px rgba(197, 168, 128, 0.25);
+  box-shadow: 0 4px 14px rgba(209, 163, 69, 0.3);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   cursor: pointer;
 }
 
 .btn-luxury-gold:hover {
-  background: linear-gradient(135deg, #D4AF37 0%, #C5A880 100%);
+  background: linear-gradient(135deg, #DFBE77 0%, #D1A345 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(197, 168, 128, 0.4);
-  color: #081629;
+  box-shadow: 0 8px 24px rgba(209, 163, 69, 0.45);
+  color: #FFFFFF;
 }
 
 .btn-luxury-navy {
@@ -155,7 +155,7 @@
   font-size: 0.8125rem;
   padding: 0.875rem 1.75rem;
   border-radius: 2px;
-  box-shadow: 0 4px 16px rgba(12, 35, 64, 0.18);
+  box-shadow: 0 4px 16px rgba(0, 72, 186, 0.2);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
@@ -168,7 +168,7 @@
 .btn-luxury-navy:hover {
   background-color: var(--navy-royal);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(12, 35, 64, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 72, 186, 0.25);
 }
 
 .btn-luxury-outline {
@@ -231,7 +231,7 @@
 
 .card-luxury:hover {
   border-color: var(--gold-champagne);
-  box-shadow: 0 16px 36px -12px rgba(12, 35, 64, 0.09);
+  box-shadow: 0 16px 36px -12px rgba(0, 72, 186, 0.12);
   transform: translateY(-3px);
 }
 
@@ -270,9 +270,9 @@
   background: #F1ECE4;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C5A880;
+  background: #D1A345;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0C2340;
+  background: #0048BA;
 }

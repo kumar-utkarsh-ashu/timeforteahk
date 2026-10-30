@@ -35,36 +35,36 @@ export default async function BlogPostPage({
       <div className="flex items-center justify-between text-xs text-[#6B7280]">
         <Link
           href="/blog"
-          className="hover:text-[#0C2340] font-semibold flex items-center gap-1.5 transition-colors"
+          className="hover:text-[#0048BA] font-semibold flex items-center gap-1.5 transition-colors"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Back to Tea Journal</span>
         </Link>
-        <span className="text-[#A38458] font-medium">{post.category}</span>
+        <span className="text-[#B88A2D] font-medium">{post.category}</span>
       </div>
 
       {/* Article Header */}
       <div className="space-y-4 text-center max-w-3xl mx-auto">
-        <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#C5A880]">
+        <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#D1A345]">
           {post.category}
         </span>
-        <h1 className="text-3xl sm:text-5xl font-serif text-[#0C2340] leading-tight">
+        <h1 className="text-3xl sm:text-5xl font-serif text-[#0048BA] leading-tight">
           {post.title}
         </h1>
 
         <div className="flex items-center justify-center gap-4 text-xs text-[#6B7280] pt-2">
           <span className="flex items-center gap-1">
-            <User className="w-3.5 h-3.5 text-[#A38458]" />
+            <User className="w-3.5 h-3.5 text-[#B88A2D]" />
             {post.author}
           </span>
           <span>•</span>
           <span className="flex items-center gap-1">
-            <Calendar className="w-3.5 h-3.5 text-[#A38458]" />
+            <Calendar className="w-3.5 h-3.5 text-[#B88A2D]" />
             {post.date}
           </span>
           <span>•</span>
           <span className="flex items-center gap-1">
-            <Clock className="w-3.5 h-3.5 text-[#A38458]" />
+            <Clock className="w-3.5 h-3.5 text-[#B88A2D]" />
             {post.readTime}
           </span>
         </div>
@@ -85,7 +85,7 @@ export default async function BlogPostPage({
       {/* Editorial Body Content */}
       <div className="prose prose-stone max-w-none space-y-6 text-sm sm:text-base text-[#3A3D42] leading-relaxed">
         {post.content.map((paragraph, idx) => (
-          <p key={idx} className={idx === 0 ? 'text-lg sm:text-xl font-serif italic text-[#0C2340] leading-relaxed border-l-2 border-[#C5A880] pl-4' : ''}>
+          <p key={idx} className={idx === 0 ? 'text-lg sm:text-xl font-serif italic text-[#0048BA] leading-relaxed border-l-2 border-[#D1A345] pl-4' : ''}>
             {paragraph}
           </p>
         ))}
@@ -94,7 +94,7 @@ export default async function BlogPostPage({
       {/* Recommended Teatime Companion Product */}
       {recommendedProduct && (
         <div className="p-8 rounded-xl bg-[#FAF8F5] border border-[#E8E4DC] space-y-4 mt-12">
-          <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#A38458]">
+          <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#B88A2D]">
             Featured in this Article
           </span>
           <div className="max-w-xs">
@@ -112,7 +112,7 @@ export default async function BlogPostPage({
           ← Return to Journal
         </Link>
         <div className="flex items-center gap-2 text-xs text-[#6B7280]">
-          <Share2 className="w-4 h-4 text-[#A38458]" />
+          <Share2 className="w-4 h-4 text-[#B88A2D]" />
           <span>Share Article</span>
         </div>
       </div>

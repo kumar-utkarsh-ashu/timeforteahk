@@ -11,37 +11,37 @@ export default function CustomHamperPage() {
       {/* Header & Introduction */}
       <div className="text-center max-w-2xl mx-auto space-y-3">
         <div className="flex items-center justify-center gap-2 text-xs text-[#6B7280]">
-          <Link href="/" className="hover:text-[#0C2340]">Home</Link>
+          <Link href="/" className="hover:text-[#0048BA]">Home</Link>
           <span>/</span>
-          <span className="text-[#0C2340] font-medium">Bespoke Hamper Studio</span>
+          <span className="text-[#0048BA] font-medium">Bespoke Hamper Studio</span>
         </div>
 
-        <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#C5A880]">
+        <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#D1A345]">
           The Art of Gifting
         </span>
-        <h1 className="text-3xl sm:text-5xl font-serif text-[#0C2340]">
+        <h1 className="text-3xl sm:text-5xl font-serif text-[#0048BA]">
           Curate a Bespoke Afternoon Tea Hamper
         </h1>
         <p className="text-xs sm:text-sm text-[#5C5C5C] leading-relaxed">
-          Inspired by London&apos;s grand gifting traditions, create an unforgettable presentation of German Mono Filio teapots, fine porcelain tableware, and single-origin teas encased in gold-embossed keepsake trunks.
+          Inspired by London&apos;s grand gifting traditions, create an unforgettable presentation of German Mono Filio teapots, fine tableware, and single-origin teas encased in gold-embossed keepsake trunks.
         </p>
       </div>
 
       {/* Trust Badges */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto text-xs text-center">
         <div className="p-4 rounded bg-[#FAF8F5] border border-[#E8E4DC] flex flex-col items-center">
-          <Sparkles className="w-5 h-5 text-[#C5A880] mb-1.5" />
-          <span className="font-semibold text-[#0C2340]">Hand-Calligraphed Notes</span>
+          <Sparkles className="w-5 h-5 text-[#D1A345] mb-1.5" />
+          <span className="font-semibold text-[#0048BA]">Hand-Calligraphed Notes</span>
           <span className="text-[11px] text-[#6B7280]">Inscribed by hand with your bespoke message</span>
         </div>
         <div className="p-4 rounded bg-[#FAF8F5] border border-[#E8E4DC] flex flex-col items-center">
           <Gift className="w-5 h-5 text-[#5B8276] mb-1.5" />
-          <span className="font-semibold text-[#0C2340]">Satin Ribbon & Wax Seal</span>
+          <span className="font-semibold text-[#0048BA]">Satin Ribbon & Wax Seal</span>
           <span className="text-[11px] text-[#6B7280]">Finished in our Central atelier</span>
         </div>
         <div className="p-4 rounded bg-[#FAF8F5] border border-[#E8E4DC] flex flex-col items-center">
-          <ShieldCheck className="w-5 h-5 text-[#A38458] mb-1.5" />
-          <span className="font-semibold text-[#0C2340]">White-Glove HK Delivery</span>
+          <ShieldCheck className="w-5 h-5 text-[#B88A2D] mb-1.5" />
+          <span className="font-semibold text-[#0048BA]">White-Glove HK Delivery</span>
           <span className="text-[11px] text-[#6B7280]">Direct to your recipient&apos;s door</span>
         </div>
       </div>
@@ -52,7 +52,7 @@ export default function CustomHamperPage() {
       {/* Client Testimonials */}
       <div className="pt-8 border-t border-[#E8E4DC] max-w-4xl mx-auto">
         <div className="text-center mb-6">
-          <h3 className="text-xl font-serif text-[#0C2340]">Cherished by Hosts & Gifters</h3>
+          <h3 className="text-xl font-serif text-[#0048BA]">Cherished by Hosts & Gifters</h3>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
@@ -65,7 +65,7 @@ export default function CustomHamperPage() {
             <p className="italic text-[#3A3D42]">
               &ldquo;The navy trunk with the Mono 1.5L teapot and Mulberry plates was the most admired wedding gift at our goddaughter&apos;s celebration in Repulse Bay. Unbelievably refined presentation.&rdquo;
             </p>
-            <p className="font-semibold text-[#0C2340] pt-1">— Victoria L., Mid-Levels</p>
+            <p className="font-semibold text-[#0048BA] pt-1">— Victoria L., Mid-Levels</p>
           </div>
 
           <div className="p-6 rounded-lg bg-white border border-[#E8E4DC] space-y-2 shadow-xs">
@@ -77,7 +77,7 @@ export default function CustomHamperPage() {
             <p className="italic text-[#3A3D42]">
               &ldquo;We ordered 15 curated hampers for our private bank VIP clients. The handwritten calligraphy cards and the Ali Shan Oolong were raved about for weeks.&rdquo;
             </p>
-            <p className="font-semibold text-[#0C2340] pt-1">— Marcus T., Central</p>
+            <p className="font-semibold text-[#0048BA] pt-1">— Marcus T., Central</p>
           </div>
         </div>
       </div>

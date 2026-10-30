@@ -24,10 +24,10 @@ export function ContactForm() {
       {/* Left Column: Showroom Information & Map Card */}
       <div className="space-y-6">
         <div>
-          <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#C5A880]">
+          <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#D1A345]">
             Central Hong Kong Showroom
           </span>
-          <h2 className="text-2xl sm:text-3xl font-serif text-[#0C2340] mt-1">
+          <h2 className="text-2xl sm:text-3xl font-serif text-[#0048BA] mt-1">
             Experience Teatime in Person
           </h2>
           <p className="text-xs text-[#5C5C5C] mt-2 leading-relaxed">
@@ -38,41 +38,41 @@ export function ContactForm() {
         {/* Showroom Details Box */}
         <div className="p-6 rounded-lg bg-[#FAF8F5] border border-[#E8E4DC] space-y-4 text-xs">
           <div className="flex items-start gap-3">
-            <MapPin className="w-4 h-4 text-[#C5A880] shrink-0 mt-0.5" />
+            <MapPin className="w-4 h-4 text-[#D1A345] shrink-0 mt-0.5" />
             <div>
-              <p className="font-semibold text-[#0C2340]">Address</p>
+              <p className="font-semibold text-[#0048BA]">Address</p>
               <p className="text-[#5C5C5C]">{SITE_CONFIG.showroom.address}</p>
-              <p className="text-[11px] text-[#A38458] mt-0.5">{SITE_CONFIG.showroom.mrt}</p>
+              <p className="text-[11px] text-[#B88A2D] mt-0.5">{SITE_CONFIG.showroom.mrt}</p>
             </div>
           </div>
 
           <div className="flex items-start gap-3 pt-3 border-t border-[#E8E4DC]/60">
-            <Clock className="w-4 h-4 text-[#C5A880] shrink-0 mt-0.5" />
+            <Clock className="w-4 h-4 text-[#D1A345] shrink-0 mt-0.5" />
             <div>
-              <p className="font-semibold text-[#0C2340]">Atelier Hours</p>
+              <p className="font-semibold text-[#0048BA]">Atelier Hours</p>
               <p className="text-[#5C5C5C]">{SITE_CONFIG.showroom.hours}</p>
             </div>
           </div>
 
           <div className="flex items-start gap-3 pt-3 border-t border-[#E8E4DC]/60">
-            <Phone className="w-4 h-4 text-[#C5A880] shrink-0 mt-0.5" />
+            <Phone className="w-4 h-4 text-[#D1A345] shrink-0 mt-0.5" />
             <div>
-              <p className="font-semibold text-[#0C2340]">Telephone & WhatsApp</p>
+              <p className="font-semibold text-[#0048BA]">Telephone & WhatsApp</p>
               <p className="text-[#5C5C5C]">{SITE_CONFIG.contact.phone}</p>
             </div>
           </div>
 
           <div className="flex items-start gap-3 pt-3 border-t border-[#E8E4DC]/60">
-            <Mail className="w-4 h-4 text-[#C5A880] shrink-0 mt-0.5" />
+            <Mail className="w-4 h-4 text-[#D1A345] shrink-0 mt-0.5" />
             <div>
-              <p className="font-semibold text-[#0C2340]">Email Inquiries</p>
+              <p className="font-semibold text-[#0048BA]">Email Inquiries</p>
               <p className="text-[#5C5C5C]">{SITE_CONFIG.contact.email}</p>
             </div>
           </div>
         </div>
 
         {/* Visual Map Representation Card */}
-        <div className="relative rounded-lg overflow-hidden border border-[#E8E4DC] bg-[#16325C] text-white p-6 shadow-sm">
+        <div className="relative rounded-lg overflow-hidden border border-[#E8E4DC] bg-[#00358A] text-white p-6 shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-[#5B8276] animate-pulse" />
@@ -101,7 +101,7 @@ export function ContactForm() {
               href={SITE_CONFIG.contact.whatsAppLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-luxury-outline py-2 px-4 text-[11px] bg-white text-[#0C2340] border-white"
+              className="btn-luxury-outline py-2 px-4 text-[11px] bg-white text-[#0048BA] border-white"
             >
               <MessageSquare className="w-3.5 h-3.5" />
               <span>WhatsApp Concierge</span>
@@ -112,7 +112,7 @@ export function ContactForm() {
 
       {/* Right Column: Contact Form */}
       <div className="bg-white p-6 sm:p-8 rounded-lg border border-[#E8E4DC] shadow-sm">
-        <h3 className="text-xl font-serif font-semibold text-[#0C2340] mb-2">
+        <h3 className="text-xl font-serif font-semibold text-[#0048BA] mb-2">
           Send a Message or Book an Appointment
         </h3>
         <p className="text-xs text-[#6B7280] mb-6">
@@ -124,7 +124,7 @@ export function ContactForm() {
             <div className="w-12 h-12 rounded-full bg-[#EBF2EE] text-[#5B8276] flex items-center justify-center mx-auto">
               <Check className="w-6 h-6" />
             </div>
-            <h4 className="text-lg font-serif text-[#0C2340]">Message Dispatched</h4>
+            <h4 className="text-lg font-serif text-[#0048BA]">Message Dispatched</h4>
             <p className="text-xs text-[#5C5C5C]">
               Thank you, {formData.name}. Our team has received your note and will be in touch shortly.
             </p>
@@ -138,48 +138,48 @@ export function ContactForm() {
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4 text-xs">
             <div>
-              <label className="font-semibold text-[#0C2340] block mb-1">Your Name</label>
+              <label className="font-semibold text-[#0048BA] block mb-1">Your Name</label>
               <input
                 type="text"
                 required
                 placeholder="Full Name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#C5A880] outline-none"
+                className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#D1A345] outline-none"
               />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="font-semibold text-[#0C2340] block mb-1">Email Address</label>
+                <label className="font-semibold text-[#0048BA] block mb-1">Email Address</label>
                 <input
                   type="email"
                   required
                   placeholder="name@example.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#C5A880] outline-none"
+                  className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#D1A345] outline-none"
                 />
               </div>
 
               <div>
-                <label className="font-semibold text-[#0C2340] block mb-1">Phone / WhatsApp</label>
+                <label className="font-semibold text-[#0048BA] block mb-1">Phone / WhatsApp</label>
                 <input
                   type="tel"
                   placeholder="+852 9865 6217"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#C5A880] outline-none"
+                  className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#D1A345] outline-none"
                 />
               </div>
             </div>
 
             <div>
-              <label className="font-semibold text-[#0C2340] block mb-1">Reason for Inquiry</label>
+              <label className="font-semibold text-[#0048BA] block mb-1">Reason for Inquiry</label>
               <select
                 value={formData.inquiryType}
                 onChange={(e) => setFormData({ ...formData, inquiryType: e.target.value })}
-                className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#C5A880] outline-none"
+                className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#D1A345] outline-none"
               >
                 <option>Showroom Private Tasting Appointment</option>
                 <option>Mono Germany Teapot Inquiry & Parts</option>
@@ -190,14 +190,14 @@ export function ContactForm() {
             </div>
 
             <div>
-              <label className="font-semibold text-[#0C2340] block mb-1">Message</label>
+              <label className="font-semibold text-[#0048BA] block mb-1">Message</label>
               <textarea
                 rows={5}
                 required
                 placeholder="How may our tea concierge assist you?"
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#C5A880] outline-none"
+                className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#D1A345] outline-none"
               />
             </div>
 

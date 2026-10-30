@@ -2,7 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { PRODUCTS } from '@/data/products';
-import { ProductCard } from '@/components/product/ProductCard';
+import { CATEGORIES_DATA } from '@/data/categories';
+import { CategoryProductView } from '@/components/shop/CategoryProductView';
 
 interface CategoryMeta {
   title: string;
@@ -20,10 +21,10 @@ const CATEGORY_DATA: Record<string, CategoryMeta> = {
     partnerBadge: '🇩🇪 Official Mono Germany Partner',
   },
   'tableware': {
-    title: 'Fine Porcelain & Tableware',
-    subtitle: 'Oriental Blossom Bone China & Tiered Stands',
+    title: 'Tableware',
+    subtitle: 'Plates & Tea Cups, Placemats, Napkin Rings & Candles',
     description:
-      'Fine bone china dining plates, dessert plates, and three-tier afternoon tea stands finished with 24k gold rims and painterly botanical mulberry motifs.',
+      'Curated dining plates, tea cups, sculptural floral napkin rings, woven placemats, and candleholders designed to elevate your teatime rituals.',
   },
   'table-linen': {
     title: 'Handcrafted Table Linen',
@@ -50,6 +51,13 @@ const CATEGORY_DATA: Record<string, CategoryMeta> = {
       'Limited-edition blush gift boxes and organic French rose blends. 20% of all net proceeds are donated directly to funding free mammograms for underprivileged women in Hong Kong.',
     partnerBadge: '🎗️ Charity Edition',
   },
+  'christmas': {
+    title: 'Christmas Collection',
+    subtitle: 'Festive Holiday Placemats, Napkin Rings, Candleholders & Gift Sets',
+    description:
+      'Celebrate the festive season with our holiday table decor, candleholders, velvet-edged linens, and luxury afternoon tea gift selections.',
+    partnerBadge: '🎄 Seasonal Holiday Collection',
+  },
 };
 
 export function generateStaticParams() {
@@ -60,6 +68,7 @@ export function generateStaticParams() {
     { category: 'tea' },
     { category: 'gift-boxes' },
     { category: 'pinkribbon' },
+    { category: 'christmas' },
   ];
 }
 
@@ -81,25 +90,25 @@ export default async function CategoryPage({
     <div className="max-w-7xl mx-auto px-4 sm:px-8 py-10 sm:py-14 space-y-10">
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-xs text-[#6B7280]">
-        <Link href="/" className="hover:text-[#0C2340]">Home</Link>
+        <Link href="/" className="hover:text-[#0048BA]">Home</Link>
         <span>/</span>
-        <Link href="/shop" className="hover:text-[#0C2340]">Shop All</Link>
+        <Link href="/shop" className="hover:text-[#0048BA]">Shop All</Link>
         <span>/</span>
-        <span className="text-[#0C2340] font-medium">{meta.title}</span>
+        <span className="text-[#0048BA] font-medium">{meta.title}</span>
       </div>
 
       {/* Category Hero Banner */}
       <div className="bg-[#FAF8F5] p-8 sm:p-12 rounded-xl border border-[#E8E4DC] relative overflow-hidden">
         <div className="max-w-2xl space-y-3 relative z-10">
           {meta.partnerBadge && (
-            <span className="inline-block text-xs font-semibold px-3 py-1 rounded bg-[#0C2340] text-amber-200 shadow-xs">
+            <span className="inline-block text-xs font-semibold px-3 py-1 rounded bg-[#0048BA] text-white shadow-xs">
               {meta.partnerBadge}
             </span>
           )}
-          <h1 className="text-3xl sm:text-4xl font-serif text-[#0C2340]">
+          <h1 className="text-3xl sm:text-4xl font-serif text-[#0048BA]">
             {meta.title}
           </h1>
-          <p className="text-xs uppercase tracking-wider font-semibold text-[#A38458]">
+          <p className="text-xs uppercase tracking-wider font-semibold text-[#B88A2D]">
             {meta.subtitle}
           </p>
           <p className="text-xs sm:text-sm text-[#5C5C5C] leading-relaxed pt-1">
@@ -108,21 +117,13 @@ export default async function CategoryPage({
         </div>
       </div>
 
-      {/* Product Grid */}
-      <div className="space-y-4">
-        <div className="flex justify-between items-center text-xs text-[#6B7280]">
-          <span>Showing {products.length} curated pieces</span>
-          <Link href="/shop" className="text-[#0C2340] hover:text-[#C5A880] font-semibold">
-            View All Categories →
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </div>
+      {/* Subcategories & Product View */}
+      <CategoryProductView
+        categorySlug={category}
+        categoryName={meta.title}
+        subcategories={CATEGORIES_DATA.find((c) => c.slug === category)?.subcategories || []}
+        products={products}
+      />
     </div>
   );
 }

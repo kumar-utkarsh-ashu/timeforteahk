@@ -28,15 +28,15 @@ export default function GalleryPage() {
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto space-y-3">
         <div className="flex items-center justify-center gap-2 text-xs text-[#6B7280]">
-          <Link href="/" className="hover:text-[#0C2340]">Home</Link>
+          <Link href="/" className="hover:text-[#0048BA]">Home</Link>
           <span>/</span>
-          <span className="text-[#0C2340] font-medium">The Tablescape Archive</span>
+          <span className="text-[#0048BA] font-medium">The Tablescape Archive</span>
         </div>
 
-        <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#C5A880]">
+        <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#D1A345]">
           Visual Inspiration
         </span>
-        <h1 className="text-3xl sm:text-5xl font-serif text-[#0C2340]">
+        <h1 className="text-3xl sm:text-5xl font-serif text-[#0048BA]">
           The Afternoon Tea Tablescape Archive
         </h1>
         <p className="text-xs sm:text-sm text-[#5C5C5C] leading-relaxed">
@@ -52,8 +52,8 @@ export default function GalleryPage() {
             onClick={() => setActiveTab(tab.id)}
             className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all shrink-0 ${
               activeTab === tab.id
-                ? 'bg-[#0C2340] text-white shadow-sm'
-                : 'bg-white text-[#5C5C5C] border border-[#E8E4DC] hover:border-[#C5A880] hover:text-[#0C2340]'
+                ? 'bg-[#0048BA] text-white shadow-sm'
+                : 'bg-white text-[#5C5C5C] border border-[#E8E4DC] hover:border-[#D1A345] hover:text-[#0048BA]'
             }`}
           >
             {tab.label}
@@ -76,8 +76,8 @@ export default function GalleryPage() {
       </div>
 
       {/* Booking CTA Strip */}
-      <div className="p-8 sm:p-12 rounded-xl bg-gradient-to-r from-[#0C2340] to-[#16325C] text-white text-center max-w-4xl mx-auto space-y-4 shadow-xl border border-[#C5A880]/30">
-        <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#C5A880]">
+      <div className="p-8 sm:p-12 rounded-xl bg-gradient-to-r from-[#00358A] to-[#0048BA] text-white text-center max-w-4xl mx-auto space-y-4 shadow-xl border border-[#D1A345]/30">
+        <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#DFBE77]">
           Turnkey Event Styling in Hong Kong
         </span>
         <h3 className="text-2xl sm:text-3xl font-serif text-white">
@@ -97,7 +97,7 @@ export default function GalleryPage() {
             rel="noopener noreferrer"
             className="btn-luxury-outline-light text-xs py-3 px-6"
           >
-            <MessageSquare className="w-4 h-4 text-[#C5A880]" />
+            <MessageSquare className="w-4 h-4 text-[#D1A345]" />
             <span>Chat on WhatsApp Concierge</span>
           </a>
         </div>

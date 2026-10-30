@@ -35,7 +35,7 @@ export function QuickViewModal() {
       <div className="relative w-full max-w-3xl bg-white rounded-md shadow-2xl overflow-hidden z-10 border border-[#E8E4DC] max-h-[90vh] flex flex-col md:flex-row">
         <button
           onClick={() => setQuickViewProduct(null)}
-          className="absolute top-3 right-3 z-20 p-1.5 rounded-full bg-white/80 hover:bg-white text-[#0C2340] shadow-md transition-all"
+          className="absolute top-3 right-3 z-20 p-1.5 rounded-full bg-white/80 hover:bg-white text-[#0048BA] shadow-md transition-all"
         >
           <X className="w-5 h-5" />
         </button>
@@ -59,10 +59,10 @@ export function QuickViewModal() {
         {/* Product Details Column */}
         <div className="md:w-1/2 p-6 overflow-y-auto flex flex-col justify-between space-y-4">
           <div>
-            <p className="text-xs font-semibold text-[#A38458] uppercase tracking-wider">
+            <p className="text-xs font-semibold text-[#B88A2D] uppercase tracking-wider">
               {quickViewProduct.category}
             </p>
-            <h2 className="text-xl font-serif font-semibold text-[#0C2340] mt-1">
+            <h2 className="text-xl font-serif font-semibold text-[#0048BA] mt-1">
               {quickViewProduct.name}
             </h2>
             <p className="text-xs text-[#6B7280] mt-1">{quickViewProduct.subtitle}</p>
@@ -77,7 +77,7 @@ export function QuickViewModal() {
             </div>
 
             <div className="mt-4 pt-3 border-t border-[#E8E4DC]">
-              <span className="text-2xl font-bold font-serif text-[#0C2340]">
+              <span className="text-2xl font-bold font-serif text-[#0048BA]">
                 {formatPrice(priceHKD, priceGBP)}
               </span>
             </div>
@@ -89,7 +89,7 @@ export function QuickViewModal() {
             {/* Variant Selector */}
             {quickViewProduct.variants && (
               <div className="mt-4 space-y-1.5">
-                <label className="text-xs font-semibold text-[#0C2340]">Select Option:</label>
+                <label className="text-xs font-semibold text-[#0048BA]">Select Option:</label>
                 <div className="flex flex-wrap gap-2">
                   {quickViewProduct.variants.map((v) => (
                     <button
@@ -97,8 +97,8 @@ export function QuickViewModal() {
                       onClick={() => setSelectedVariant(v.name)}
                       className={`px-3 py-1.5 text-xs rounded border transition-all ${
                         (selectedVariant || quickViewProduct.variants?.[0].name) === v.name
-                          ? 'border-[#0C2340] bg-[#0C2340] text-white font-semibold'
-                          : 'border-[#E8E4DC] bg-white text-[#3A3D42] hover:border-[#C5A880]'
+                          ? 'border-[#0048BA] bg-[#0048BA] text-white font-semibold'
+                          : 'border-[#E8E4DC] bg-white text-[#3A3D42] hover:border-[#D1A345]'
                       }`}
                     >
                       {v.name}
@@ -115,14 +115,14 @@ export function QuickViewModal() {
               <div className="flex items-center border border-[#E8E4DC] rounded bg-[#FAF8F5] px-2">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="px-2 py-1 text-sm text-[#0C2340] hover:text-[#A38458]"
+                  className="px-2 py-1 text-sm text-[#0048BA] hover:text-[#B88A2D]"
                 >
                   -
                 </button>
-                <span className="px-2 text-xs font-semibold text-[#0C2340]">{quantity}</span>
+                <span className="px-2 text-xs font-semibold text-[#0048BA]">{quantity}</span>
                 <button
                   onClick={() => setQuantity(quantity + 1)}
-                  className="px-2 py-1 text-sm text-[#0C2340] hover:text-[#A38458]"
+                  className="px-2 py-1 text-sm text-[#0048BA] hover:text-[#B88A2D]"
                 >
                   +
                 </button>
@@ -141,9 +141,9 @@ export function QuickViewModal() {
             <Link
               href={`/shop/product/${quickViewProduct.slug}`}
               onClick={() => setQuickViewProduct(null)}
-              className="flex items-center justify-center gap-1.5 text-xs text-[#0C2340] hover:text-[#A38458] font-medium py-1 transition-colors"
+              className="flex items-center justify-center gap-1.5 text-xs text-[#0048BA] hover:text-[#B88A2D] font-medium py-1 transition-colors"
             >
-              <span>View Full Details & Tasting/Care Notes</span>
+              <span>View Full Details &amp; Tasting/Care Notes</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>

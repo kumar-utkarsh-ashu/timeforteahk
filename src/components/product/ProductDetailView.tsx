@@ -60,15 +60,15 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
     <div className="max-w-7xl mx-auto px-4 sm:px-8 py-10 sm:py-14 space-y-16">
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-xs text-[#6B7280]">
-        <Link href="/" className="hover:text-[#0C2340]">Home</Link>
+        <Link href="/" className="hover:text-[#0048BA]">Home</Link>
         <span>/</span>
-        <Link href="/shop" className="hover:text-[#0C2340]">Shop</Link>
+        <Link href="/shop" className="hover:text-[#0048BA]">Shop</Link>
         <span>/</span>
-        <Link href={`/shop/${product.categorySlug}`} className="hover:text-[#0C2340]">
+        <Link href={`/shop/${product.categorySlug}`} className="hover:text-[#0048BA]">
           {product.category}
         </Link>
         <span>/</span>
-        <span className="text-[#0C2340] font-medium truncate">{product.name}</span>
+        <span className="text-[#0048BA] font-medium truncate">{product.name}</span>
       </div>
 
       {/* Main Two-Column Layout */}
@@ -95,8 +95,8 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
               onClick={() => toggleWishlist(product.id)}
               className={`absolute top-4 right-4 z-10 w-9 h-9 rounded-full flex items-center justify-center transition-all ${
                 isWishlisted
-                  ? 'bg-[#C5A880] text-[#0C2340] shadow-md'
-                  : 'bg-white/80 backdrop-blur-xs text-[#0C2340] hover:bg-white hover:text-[#C5A880]'
+                  ? 'bg-[#D1A345] text-white shadow-md'
+                  : 'bg-white/80 backdrop-blur-xs text-[#0048BA] hover:bg-white hover:text-[#D1A345]'
               }`}
               aria-label="Wishlist"
             >
@@ -113,7 +113,7 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
                   onClick={() => setActiveImage(img)}
                   className={`relative w-20 h-20 rounded overflow-hidden shrink-0 border-2 transition-all ${
                     activeImage === img
-                      ? 'border-[#0C2340] shadow-sm'
+                      ? 'border-[#0048BA] shadow-sm'
                       : 'border-[#E8E4DC] opacity-70 hover:opacity-100'
                   }`}
                 >
@@ -134,7 +134,7 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
         <div className="space-y-6">
           <div className="space-y-2 border-b border-[#E8E4DC] pb-6">
             <div className="flex items-center justify-between">
-              <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#A38458]">
+              <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#B88A2D]">
                 {product.category}
               </span>
               <span className="text-[11px] font-semibold text-[#5B8276] flex items-center gap-1">
@@ -143,7 +143,7 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
               </span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl font-serif text-[#0C2340] leading-snug">
+            <h1 className="text-2xl sm:text-3xl font-serif text-[#0048BA] leading-snug">
               {product.name}
             </h1>
             <p className="text-xs text-[#6B7280]">{product.subtitle}</p>
@@ -160,7 +160,7 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
             </div>
 
             <div className="pt-3">
-              <span className="text-3xl font-serif font-bold text-[#0C2340]">
+              <span className="text-3xl font-serif font-bold text-[#0048BA]">
                 {formatPrice(priceHKD, priceGBP)}
               </span>
             </div>
@@ -173,7 +173,7 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
           {/* Variants Selector */}
           {product.variants && (
             <div className="space-y-2 pt-2">
-              <label className="text-xs font-semibold text-[#0C2340] uppercase tracking-wider block">
+              <label className="text-xs font-semibold text-[#0048BA] uppercase tracking-wider block">
                 Select Edition / Capacity:
               </label>
               <div className="flex flex-wrap gap-2.5">
@@ -183,8 +183,8 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
                     onClick={() => setSelectedVariant(v.name)}
                     className={`px-4 py-2 text-xs rounded border transition-all ${
                       selectedVariant === v.name
-                        ? 'border-[#0C2340] bg-[#0C2340] text-white font-semibold shadow-xs'
-                        : 'border-[#E8E4DC] bg-white text-[#3A3D42] hover:border-[#C5A880]'
+                        ? 'border-[#0048BA] bg-[#0048BA] text-white font-semibold shadow-xs'
+                        : 'border-[#E8E4DC] bg-white text-[#3A3D42] hover:border-[#D1A345]'
                     }`}
                   >
                     <span>{v.name}</span>
@@ -202,14 +202,14 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
               <div className="flex items-center border border-[#E8E4DC] rounded bg-white px-3 py-2">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="px-2 text-sm text-[#0C2340] hover:text-[#A38458]"
+                  className="px-2 text-sm text-[#0048BA] hover:text-[#B88A2D]"
                 >
                   -
                 </button>
-                <span className="px-3 text-xs font-bold text-[#0C2340]">{quantity}</span>
+                <span className="px-3 text-xs font-bold text-[#0048BA]">{quantity}</span>
                 <button
                   onClick={() => setQuantity(quantity + 1)}
-                  className="px-2 text-sm text-[#0C2340] hover:text-[#A38458]"
+                  className="px-2 text-sm text-[#0048BA] hover:text-[#B88A2D]"
                 >
                   +
                 </button>
@@ -228,9 +228,9 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
             {/* Curate into Hamper CTA */}
             <Link
               href="/custom-hamper"
-              className="w-full py-3 rounded border border-[#0C2340] text-[#0C2340] hover:bg-[#FAF8F5] text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 transition-all"
+              className="w-full py-3 rounded border border-[#0048BA] text-[#0048BA] hover:bg-[#FAF8F5] text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 transition-all"
             >
-              <Gift className="w-4 h-4 text-[#A38458]" />
+              <Gift className="w-4 h-4 text-[#B88A2D]" />
               <span>Include this in a Custom Gift Hamper</span>
             </Link>
 
@@ -249,7 +249,7 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
               <span>Free HK Delivery over HK$ 800</span>
             </div>
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-[#C5A880] shrink-0" />
+              <ShieldCheck className="w-4 h-4 text-[#D1A345] shrink-0" />
               <span>Authentic German Mono Partner</span>
             </div>
           </div>
@@ -268,11 +268,11 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
             <div className="py-3">
               <button
                 onClick={() => setOpenAccordion(openAccordion === 'story' ? '' : 'story')}
-                className="w-full flex items-center justify-between text-xs font-bold uppercase tracking-wider text-[#0C2340]"
+                className="w-full flex items-center justify-between text-xs font-bold uppercase tracking-wider text-[#0048BA]"
               >
                 <span className="flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-[#C5A880]" />
-                  Design & Craftsmanship Legacy
+                  <Sparkles className="w-3.5 h-3.5 text-[#D1A345]" />
+                  Design &amp; Craftsmanship Legacy
                 </span>
                 <ChevronDown
                   className={`w-4 h-4 transition-transform ${
@@ -291,9 +291,9 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
             <div className="py-3">
               <button
                 onClick={() => setOpenAccordion(openAccordion === 'specs' ? '' : 'specs')}
-                className="w-full flex items-center justify-between text-xs font-bold uppercase tracking-wider text-[#0C2340]"
+                className="w-full flex items-center justify-between text-xs font-bold uppercase tracking-wider text-[#0048BA]"
               >
-                <span>Specifications & Dimensions</span>
+                <span>Specifications &amp; Dimensions</span>
                 <ChevronDown
                   className={`w-4 h-4 transition-transform ${
                     openAccordion === 'specs' ? 'rotate-180' : ''
@@ -305,7 +305,7 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
                   {product.specifications.map((s, idx) => (
                     <div key={idx} className="flex justify-between py-1 border-b border-[#E8E4DC]/40">
                       <span className="text-[#6B7280]">{s.label}</span>
-                      <span className="font-medium text-[#0C2340]">{s.value}</span>
+                      <span className="font-medium text-[#0048BA]">{s.value}</span>
                     </div>
                   ))}
                 </div>
@@ -316,9 +316,9 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
             <div className="py-3">
               <button
                 onClick={() => setOpenAccordion(openAccordion === 'care' ? '' : 'care')}
-                className="w-full flex items-center justify-between text-xs font-bold uppercase tracking-wider text-[#0C2340]"
+                className="w-full flex items-center justify-between text-xs font-bold uppercase tracking-wider text-[#0048BA]"
               >
-                <span>Care & Maintenance</span>
+                <span>Care &amp; Maintenance</span>
                 <ChevronDown
                   className={`w-4 h-4 transition-transform ${
                     openAccordion === 'care' ? 'rotate-180' : ''
@@ -340,10 +340,10 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
       {/* Related / "Complete Your Teatime" Section */}
       <div className="pt-12 border-t border-[#E8E4DC] space-y-8">
         <div className="text-center max-w-xl mx-auto space-y-1">
-          <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#C5A880]">
+          <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#D1A345]">
             The Curated Pairing
           </span>
-          <h3 className="text-2xl font-serif text-[#0C2340]">Pairs Beautifully With</h3>
+          <h3 className="text-2xl font-serif text-[#0048BA]">Pairs Beautifully With</h3>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

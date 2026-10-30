@@ -27,10 +27,10 @@ export function EventBookingForm() {
   return (
     <div className="bg-white rounded-lg border border-[#E8E4DC] p-6 sm:p-8 shadow-sm">
       <div className="border-b border-[#E8E4DC] pb-4 mb-6">
-        <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#C5A880]">
+        <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#D1A345]">
           Private Consultations
         </span>
-        <h3 className="text-xl sm:text-2xl font-serif text-[#0C2340] mt-1">
+        <h3 className="text-xl sm:text-2xl font-serif text-[#0048BA] mt-1">
           Reserve Event Styling & Teaware Hire
         </h3>
         <p className="text-xs text-[#6B7280] mt-1">
@@ -43,7 +43,7 @@ export function EventBookingForm() {
           <div className="w-12 h-12 rounded-full bg-[#EBF2EE] text-[#5B8276] flex items-center justify-center mx-auto">
             <Check className="w-6 h-6" />
           </div>
-          <h4 className="text-xl font-serif text-[#0C2340]">Inquiry Received</h4>
+          <h4 className="text-xl font-serif text-[#0048BA]">Inquiry Received</h4>
           <p className="text-xs text-[#5C5C5C] max-w-md mx-auto">
             Our head event stylist Beatrice will contact you via WhatsApp and email within 4 business hours with availability, lookbook options, and custom moodboards.
           </p>
@@ -61,14 +61,14 @@ export function EventBookingForm() {
         <form onSubmit={handleSubmit} className="space-y-4 text-xs">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="font-semibold text-[#0C2340] flex items-center gap-1.5 mb-1">
-                <Users className="w-3.5 h-3.5 text-[#A38458]" />
+              <label className="font-semibold text-[#0048BA] flex items-center gap-1.5 mb-1">
+                <Users className="w-3.5 h-3.5 text-[#B88A2D]" />
                 Estimated Number of Guests
               </label>
               <select
                 value={guestCount}
                 onChange={(e) => setGuestCount(e.target.value)}
-                className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#C5A880] outline-none"
+                className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#D1A345] outline-none"
               >
                 <option value="4">Intimate (2 – 6 Guests)</option>
                 <option value="12">Celebration (8 – 16 Guests)</option>
@@ -78,8 +78,8 @@ export function EventBookingForm() {
             </div>
 
             <div>
-              <label className="font-semibold text-[#0C2340] flex items-center gap-1.5 mb-1">
-                <Calendar className="w-3.5 h-3.5 text-[#A38458]" />
+              <label className="font-semibold text-[#0048BA] flex items-center gap-1.5 mb-1">
+                <Calendar className="w-3.5 h-3.5 text-[#B88A2D]" />
                 Preferred Date
               </label>
               <input
@@ -87,18 +87,18 @@ export function EventBookingForm() {
                 required
                 value={eventDate}
                 onChange={(e) => setEventDate(e.target.value)}
-                className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#C5A880] outline-none"
+                className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#D1A345] outline-none"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="font-semibold text-[#0C2340] mb-1 block">Event Type</label>
+              <label className="font-semibold text-[#0048BA] mb-1 block">Event Type</label>
               <select
                 value={eventType}
                 onChange={(e) => setEventType(e.target.value)}
-                className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#C5A880] outline-none"
+                className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#D1A345] outline-none"
               >
                 <option>Bridal Shower / Baby Shower</option>
                 <option>Milestone Birthday Celebration</option>
@@ -109,8 +109,8 @@ export function EventBookingForm() {
             </div>
 
             <div>
-              <label className="font-semibold text-[#0C2340] flex items-center gap-1.5 mb-1">
-                <MapPin className="w-3.5 h-3.5 text-[#A38458]" />
+              <label className="font-semibold text-[#0048BA] flex items-center gap-1.5 mb-1">
+                <MapPin className="w-3.5 h-3.5 text-[#B88A2D]" />
                 Venue Location in Hong Kong
               </label>
               <input
@@ -118,45 +118,45 @@ export function EventBookingForm() {
                 placeholder="e.g. Mid-Levels, Repulse Bay, or Clubhouse"
                 value={venueLocation}
                 onChange={(e) => setVenueLocation(e.target.value)}
-                className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#C5A880] outline-none"
+                className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#D1A345] outline-none"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
             <div>
-              <label className="font-semibold text-[#0C2340] mb-1 block">Your Name</label>
+              <label className="font-semibold text-[#0048BA] mb-1 block">Your Name</label>
               <input
                 type="text"
                 required
                 placeholder="Full Name"
                 value={clientName}
                 onChange={(e) => setClientName(e.target.value)}
-                className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#C5A880] outline-none"
+                className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#D1A345] outline-none"
               />
             </div>
 
             <div>
-              <label className="font-semibold text-[#0C2340] mb-1 block">Email</label>
+              <label className="font-semibold text-[#0048BA] mb-1 block">Email</label>
               <input
                 type="email"
                 required
                 placeholder="email@domain.com"
                 value={clientEmail}
                 onChange={(e) => setClientEmail(e.target.value)}
-                className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#C5A880] outline-none"
+                className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#D1A345] outline-none"
               />
             </div>
 
             <div>
-              <label className="font-semibold text-[#0C2340] mb-1 block">WhatsApp / Phone</label>
+              <label className="font-semibold text-[#0048BA] mb-1 block">WhatsApp / Phone</label>
               <input
                 type="tel"
                 required
                 placeholder="+852 9865 6217"
                 value={clientPhone}
                 onChange={(e) => setClientPhone(e.target.value)}
-                className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#C5A880] outline-none"
+                className="w-full p-2.5 rounded border border-[#E8E4DC] bg-[#FAF8F5] text-xs focus:ring-1 focus:ring-[#D1A345] outline-none"
               />
             </div>
           </div>

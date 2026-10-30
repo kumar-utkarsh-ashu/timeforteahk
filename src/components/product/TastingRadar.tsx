@@ -14,7 +14,7 @@ export function TastingRadar({ tastingNotes }: TastingRadarProps) {
   return (
     <div className="p-5 rounded-lg bg-[#FAF8F5] border border-[#E8E4DC] space-y-4">
       <div className="flex items-center justify-between border-b border-[#E8E4DC] pb-3">
-        <h4 className="text-xs font-serif font-bold uppercase tracking-wider text-[#0C2340]">
+        <h4 className="text-xs font-serif font-bold uppercase tracking-wider text-[#0048BA]">
           Sensory Profile & Tasting Notes
         </h4>
         <span className="text-[10px] uppercase font-semibold text-[#5B8276] bg-[#EBF2EE] px-2 py-0.5 rounded">
@@ -25,7 +25,7 @@ export function TastingRadar({ tastingNotes }: TastingRadarProps) {
       {/* Primary Aroma Descriptor */}
       <div>
         <span className="text-[11px] font-semibold text-[#6B7280] uppercase tracking-wider">Aroma:</span>
-        <p className="text-sm font-serif italic text-[#0C2340] mt-0.5">
+        <p className="text-sm font-serif italic text-[#0048BA] mt-0.5">
           &ldquo;{tastingNotes.aroma}&rdquo;
         </p>
       </div>
@@ -37,7 +37,7 @@ export function TastingRadar({ tastingNotes }: TastingRadarProps) {
           {tastingNotes.flavorNotes.map((note) => (
             <span
               key={note}
-              className="text-xs px-2.5 py-1 rounded bg-white text-[#0C2340] border border-[#E0CEB5] font-medium shadow-xs"
+              className="text-xs px-2.5 py-1 rounded bg-white text-[#0048BA] border border-[#E0CEB5] font-medium shadow-xs"
             >
               {note}
             </span>
@@ -49,15 +49,15 @@ export function TastingRadar({ tastingNotes }: TastingRadarProps) {
       <div className="grid grid-cols-3 gap-3 pt-2 text-center text-xs">
         <div className="p-2.5 rounded bg-white border border-[#E8E4DC]">
           <span className="text-[10px] text-[#6B7280] uppercase font-medium">Body</span>
-          <p className="font-semibold text-[#0C2340] mt-0.5">{tastingNotes.body}</p>
+          <p className="font-semibold text-[#0048BA] mt-0.5">{tastingNotes.body}</p>
         </div>
         <div className="p-2.5 rounded bg-white border border-[#E8E4DC]">
           <span className="text-[10px] text-[#6B7280] uppercase font-medium">Sweetness</span>
-          <p className="font-semibold text-[#0C2340] mt-0.5">{tastingNotes.sweetness}</p>
+          <p className="font-semibold text-[#0048BA] mt-0.5">{tastingNotes.sweetness}</p>
         </div>
         <div className="p-2.5 rounded bg-white border border-[#E8E4DC]">
           <span className="text-[10px] text-[#6B7280] uppercase font-medium">Astringency</span>
-          <p className="font-semibold text-[#0C2340] mt-0.5">{tastingNotes.astringency}</p>
+          <p className="font-semibold text-[#0048BA] mt-0.5">{tastingNotes.astringency}</p>
         </div>
       </div>
     </div>

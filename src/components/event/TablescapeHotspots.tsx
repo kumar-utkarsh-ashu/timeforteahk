@@ -53,13 +53,13 @@ export function TablescapeHotspots({
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
 
           {/* Location Badge */}
-          <div className="absolute top-4 left-4 z-10 bg-[#0C2340]/90 backdrop-blur-md px-3.5 py-1.5 rounded text-[11px] text-amber-200 border border-white/10 flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-[#C5A880]" />
+          <div className="absolute top-4 left-4 z-10 bg-[#00225A]/90 backdrop-blur-md px-3.5 py-1.5 rounded text-[11px] text-[#DFBE77] border border-white/10 flex items-center gap-1.5">
+            <Sparkles className="w-3.5 h-3.5 text-[#D1A345]" />
             <span>{location}</span>
           </div>
 
           <div className="absolute bottom-6 left-6 right-6 z-10 text-white">
-            <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#C5A880]">
+            <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#D1A345]">
               The Tablescape Edit
             </span>
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-serif text-white mt-0.5">{title}</h3>
@@ -82,12 +82,12 @@ export function TablescapeHotspots({
                   onMouseEnter={() => setActiveSlug(pin.slug)}
                   className={`relative w-8 h-8 rounded-full border-2 transition-all flex items-center justify-center cursor-pointer ${
                     isActive
-                      ? 'bg-[#C5A880] border-white scale-125 shadow-xl text-[#0C2340]'
-                      : 'bg-[#0C2340]/90 border-white text-[#C5A880] animate-hotspot hover:scale-110'
+                      ? 'bg-[#D1A345] border-white scale-125 shadow-xl text-white'
+                      : 'bg-[#00225A]/90 border-white text-[#D1A345] animate-hotspot hover:scale-110'
                   }`}
                   aria-label={`Inspect ${pin.title}`}
                 >
-                  <span className={`w-2 h-2 rounded-full ${isActive ? 'bg-[#0C2340]' : 'bg-[#C5A880]'}`} />
+                  <span className={`w-2 h-2 rounded-full ${isActive ? 'bg-white' : 'bg-[#D1A345]'}`} />
                 </button>
               </div>
             );
@@ -99,10 +99,10 @@ export function TablescapeHotspots({
           <div className="space-y-4">
             <div className="border-b border-[#E8E4DC] pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
               <div>
-                <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#C5A880]">
+                <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#D1A345]">
                   Included in this Tablescape
                 </span>
-                <h4 className="text-lg font-serif font-bold text-[#0C2340]">
+                <h4 className="text-lg font-serif font-bold text-[#0048BA]">
                   Shop The Individual Pieces
                 </h4>
               </div>
@@ -123,8 +123,8 @@ export function TablescapeHotspots({
                     onClick={() => setActiveSlug(prod.slug)}
                     className={`p-3 rounded-lg border transition-all cursor-pointer flex gap-3 items-center ${
                       isSelected
-                        ? 'bg-white border-[#C5A880] shadow-sm ring-1 ring-[#C5A880]/30'
-                        : 'bg-white/60 border-[#E8E4DC] hover:border-[#C5A880] hover:bg-white'
+                        ? 'bg-white border-[#D1A345] shadow-sm ring-1 ring-[#D1A345]/30'
+                        : 'bg-white/60 border-[#E8E4DC] hover:border-[#D1A345] hover:bg-white'
                     }`}
                   >
                     <div className="relative w-16 h-16 rounded overflow-hidden bg-gray-100 shrink-0 border border-[#E8E4DC]">
@@ -139,7 +139,7 @@ export function TablescapeHotspots({
 
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-1.5">
-                        <span className="text-[10px] uppercase font-bold text-[#A38458]">
+                        <span className="text-[10px] uppercase font-bold text-[#B88A2D]">
                           {prod.category}
                         </span>
                         {isSelected && (
@@ -148,10 +148,10 @@ export function TablescapeHotspots({
                           </span>
                         )}
                       </div>
-                      <h5 className="text-xs font-serif font-semibold text-[#0C2340] line-clamp-1 mt-0.5">
+                      <h5 className="text-xs font-serif font-semibold text-[#0048BA] line-clamp-1 mt-0.5">
                         {prod.name}
                       </h5>
-                      <p className="text-xs font-bold text-[#0C2340] mt-1">
+                      <p className="text-xs font-bold text-[#0048BA] mt-1">
                         HK$ {prod.priceHKD.toLocaleString()}
                       </p>
                     </div>
@@ -162,7 +162,7 @@ export function TablescapeHotspots({
                           e.stopPropagation();
                           addToCart(prod, 1);
                         }}
-                        className="p-2 rounded bg-[#0C2340] text-white hover:bg-[#16325C] transition-colors"
+                        className="p-2 rounded bg-[#0048BA] text-white hover:bg-[#00358A] transition-colors"
                         title="Add to Shopping Bag"
                       >
                         <ShoppingBag className="w-3.5 h-3.5" />
@@ -172,7 +172,7 @@ export function TablescapeHotspots({
                           e.stopPropagation();
                           setQuickViewProduct(prod);
                         }}
-                        className="p-2 rounded border border-[#E8E4DC] text-[#0C2340] hover:border-[#C5A880] transition-colors"
+                        className="p-2 rounded border border-[#E8E4DC] text-[#0048BA] hover:border-[#D1A345] transition-colors"
                         title="Quick View"
                       >
                         <Eye className="w-3.5 h-3.5" />

@@ -52,9 +52,9 @@ export function CartDrawer() {
         {/* Top Header */}
         <div className="p-5 border-b border-[#E8E4DC] flex items-center justify-between bg-[#FAF8F5]">
           <div className="flex items-center gap-2.5">
-            <ShoppingBag className="w-5 h-5 text-[#0C2340]" />
-            <h2 className="text-base font-serif font-semibold text-[#0C2340]">Your Shopping Bag</h2>
-            <span className="text-xs px-2 py-0.5 rounded-full bg-[#E0CEB5]/40 text-[#0C2340] font-semibold">
+            <ShoppingBag className="w-5 h-5 text-[#0048BA]" />
+            <h2 className="text-base font-serif font-semibold text-[#0048BA]">Your Shopping Bag</h2>
+            <span className="text-xs px-2 py-0.5 rounded-full bg-[#EBD6A7]/50 text-[#0048BA] font-semibold">
               {cart.reduce((s, i) => s + i.quantity, 0)}
             </span>
           </div>
@@ -63,7 +63,7 @@ export function CartDrawer() {
               setIsCartOpen(false);
               setOrderComplete(false);
             }}
-            className="p-1.5 text-[#6B7280] hover:text-[#0C2340] rounded transition-colors"
+            className="p-1.5 text-[#6B7280] hover:text-[#0048BA] rounded transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -79,7 +79,7 @@ export function CartDrawer() {
             ) : (
               <span className="text-[#3A3D42]">
                 Add{' '}
-                <strong className="text-[#0C2340]">
+                <strong className="text-[#0048BA]">
                   {currency === 'GBP'
                     ? `£${remainingForFreeShipping.gbp.toFixed(0)}`
                     : `HK$ ${remainingForFreeShipping.hkd.toLocaleString()}`}
@@ -87,11 +87,11 @@ export function CartDrawer() {
                 more for free delivery
               </span>
             )}
-            <span className="text-[11px] font-bold text-[#A38458]">{freeShippingProgress}%</span>
+            <span className="text-[11px] font-bold text-[#B88A2D]">{freeShippingProgress}%</span>
           </div>
           <div className="w-full bg-[#E8E4DC] h-1.5 rounded-full overflow-hidden">
             <div
-              className="bg-gradient-to-r from-[#C5A880] to-[#5B8276] h-full transition-all duration-500 ease-out"
+              className="bg-gradient-to-r from-[#D1A345] to-[#5B8276] h-full transition-all duration-500 ease-out"
               style={{ width: `${freeShippingProgress}%` }}
             />
           </div>
@@ -103,14 +103,14 @@ export function CartDrawer() {
             <div className="w-16 h-16 rounded-full bg-[#EBF2EE] text-[#436357] flex items-center justify-center shadow-inner">
               <ShieldCheck className="w-9 h-9" />
             </div>
-            <h3 className="text-2xl font-serif text-[#0C2340]">Thank You for Your Order</h3>
+            <h3 className="text-2xl font-serif text-[#0048BA]">Thank You for Your Order</h3>
             <p className="text-sm text-[#5C5C5C] max-w-xs">
               Your teatime selection has been received. Our Central atelier will prepare your luxury gift packaging with white-glove care.
             </p>
             <div className="p-4 bg-[#FAF8F5] border border-[#E8E4DC] rounded text-left text-xs space-y-1 w-full max-w-xs">
               <p className="text-[#6B7280]">Showroom Concierge:</p>
-              <p className="font-semibold text-[#0C2340]">{SITE_CONFIG.showroom.address}</p>
-              <p className="text-[#A38458]">WhatsApp: {SITE_CONFIG.contact.phone}</p>
+              <p className="font-semibold text-[#0048BA]">{SITE_CONFIG.showroom.address}</p>
+              <p className="text-[#B88A2D]">WhatsApp: {SITE_CONFIG.contact.phone}</p>
             </div>
             <button
               onClick={() => {
@@ -125,12 +125,12 @@ export function CartDrawer() {
         ) : cart.length === 0 ? (
           /* Empty Bag State */
           <div className="flex-1 flex flex-col items-center justify-center p-8 text-center space-y-4">
-            <div className="w-16 h-16 rounded-full bg-[#FAF8F5] text-[#A38458] flex items-center justify-center border border-[#E8E4DC]">
+            <div className="w-16 h-16 rounded-full bg-[#FAF8F5] text-[#B88A2D] flex items-center justify-center border border-[#E8E4DC]">
               <ShoppingBag className="w-7 h-7" />
             </div>
-            <h3 className="text-xl font-serif text-[#0C2340]">Your Bag is Empty</h3>
+            <h3 className="text-xl font-serif text-[#0048BA]">Your Bag is Empty</h3>
             <p className="text-xs text-[#6B7280] max-w-xs">
-              Explore our German Mono Filio teapots, fine porcelain dinnerware, and single-estate loose leaf teas.
+              Explore our German Mono Filio teapots, fine dinnerware &amp; tableware, and single-estate loose leaf teas.
             </p>
             <Link
               href="/shop"
@@ -158,7 +158,7 @@ export function CartDrawer() {
                 <div className="flex-1 flex flex-col justify-between">
                   <div>
                     <div className="flex justify-between items-start gap-2">
-                      <h4 className="text-xs font-serif font-semibold text-[#0C2340] leading-snug line-clamp-2">
+                      <h4 className="text-xs font-serif font-semibold text-[#0048BA] leading-snug line-clamp-2">
                         {item.product.name}
                       </h4>
                       <button
@@ -170,7 +170,7 @@ export function CartDrawer() {
                       </button>
                     </div>
                     {item.selectedVariant && (
-                      <p className="text-[11px] text-[#A38458] mt-0.5">{item.selectedVariant}</p>
+                      <p className="text-[11px] text-[#B88A2D] mt-0.5">{item.selectedVariant}</p>
                     )}
                   </div>
 
@@ -180,25 +180,25 @@ export function CartDrawer() {
                         onClick={() =>
                           updateQuantity(item.product.id, item.quantity - 1, item.selectedVariant)
                         }
-                        className="p-1 text-[#6B7280] hover:text-[#0C2340] transition-colors"
+                        className="p-1 text-[#6B7280] hover:text-[#0048BA] transition-colors"
                       >
                         <Minus className="w-3 h-3" />
                       </button>
-                      <span className="px-2 text-xs font-semibold text-[#0C2340]">
+                      <span className="px-2 text-xs font-semibold text-[#0048BA]">
                         {item.quantity}
                       </span>
                       <button
                         onClick={() =>
                           updateQuantity(item.product.id, item.quantity + 1, item.selectedVariant)
                         }
-                        className="p-1 text-[#6B7280] hover:text-[#0C2340] transition-colors"
+                        className="p-1 text-[#6B7280] hover:text-[#0048BA] transition-colors"
                       >
                         <Plus className="w-3 h-3" />
                       </button>
                     </div>
 
                     <div className="text-right">
-                      <p className="text-xs font-bold text-[#0C2340]">
+                      <p className="text-xs font-bold text-[#0048BA]">
                         {formatPrice(
                           item.product.priceHKD * item.quantity,
                           item.product.priceGBP * item.quantity
@@ -212,18 +212,18 @@ export function CartDrawer() {
 
             {/* Gift Wrap Addon Option */}
             <div className="pt-4">
-              <label className="flex items-center gap-3 p-3 rounded bg-[#FAF8F5] border border-[#E8E4DC] cursor-pointer hover:border-[#C5A880] transition-colors">
+              <label className="flex items-center gap-3 p-3 rounded bg-[#FAF8F5] border border-[#E8E4DC] cursor-pointer hover:border-[#D1A345] transition-colors">
                 <input
                   type="checkbox"
                   checked={addGiftBox}
                   onChange={(e) => setAddGiftBox(e.target.checked)}
-                  className="rounded text-[#0C2340] focus:ring-[#C5A880]"
+                  className="rounded text-[#0048BA] focus:ring-[#D1A345]"
                 />
-                <Gift className="w-4 h-4 text-[#A38458] shrink-0" />
+                <Gift className="w-4 h-4 text-[#B88A2D] shrink-0" />
                 <div className="flex-1 text-xs">
-                  <p className="font-semibold text-[#0C2340]">Complimentary Royal Gift Packaging</p>
+                  <p className="font-semibold text-[#0048BA]">Complimentary Royal Gift Packaging</p>
                   <p className="text-[11px] text-[#6B7280]">
-                    Gold-embossed navy box, satin ribbon & handwritten note
+                    Gold-embossed royal blue box, satin ribbon & handwritten note
                   </p>
                 </div>
               </label>
@@ -236,14 +236,14 @@ export function CartDrawer() {
           <div className="p-5 border-t border-[#E8E4DC] bg-[#FAF8F5] space-y-3">
             <div className="flex justify-between items-center text-xs text-[#6B7280]">
               <span>Estimated Delivery:</span>
-              <span className="font-medium text-[#0C2340]">
+              <span className="font-medium text-[#0048BA]">
                 {freeShippingProgress >= 100 ? 'Complimentary' : 'HK$ 50 (or pickup in Central)'}
               </span>
             </div>
 
             <div className="flex justify-between items-baseline pt-2 border-t border-[#E8E4DC]">
-              <span className="text-sm font-semibold text-[#0C2340]">Subtotal:</span>
-              <span className="text-xl font-bold font-serif text-[#0C2340]">
+              <span className="text-sm font-semibold text-[#0048BA]">Subtotal:</span>
+              <span className="text-xl font-bold font-serif text-[#0048BA]">
                 {formatPrice(subtotalHKD, subtotalGBP)}
               </span>
             </div>

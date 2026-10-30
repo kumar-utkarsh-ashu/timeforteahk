@@ -48,18 +48,18 @@ export default function CartPage() {
       <div className="flex items-center justify-between border-b border-[#E8E4DC] pb-4">
         <div>
           <div className="flex items-center gap-2 text-xs text-[#6B7280]">
-            <Link href="/" className="hover:text-[#0C2340]">Home</Link>
+            <Link href="/" className="hover:text-[#0048BA]">Home</Link>
             <span>/</span>
-            <span className="text-[#0C2340] font-medium">Shopping Bag</span>
+            <span className="text-[#0048BA] font-medium">Shopping Bag</span>
           </div>
-          <h1 className="text-2xl sm:text-4xl font-serif text-[#0C2340] mt-1">
+          <h1 className="text-2xl sm:text-4xl font-serif text-[#0048BA] mt-1">
             Your Afternoon Tea Selection
           </h1>
         </div>
 
         <Link
           href="/shop"
-          className="text-xs font-semibold text-[#0C2340] hover:text-[#C5A880] flex items-center gap-1"
+          className="text-xs font-semibold text-[#0048BA] hover:text-[#D1A345] flex items-center gap-1"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Continue Shopping</span>
@@ -71,14 +71,14 @@ export default function CartPage() {
           <div className="w-16 h-16 rounded-full bg-[#EBF2EE] text-[#5B8276] flex items-center justify-center mx-auto">
             <Check className="w-8 h-8" />
           </div>
-          <h2 className="text-2xl font-serif text-[#0C2340]">Order Confirmed</h2>
+          <h2 className="text-2xl font-serif text-[#0048BA]">Order Confirmed</h2>
           <p className="text-xs text-[#5C5C5C] leading-relaxed">
             Thank you for your order. Our Central showroom team is preparing your selection with white-glove packaging.
           </p>
-          <div className="p-4 bg-[#FAF8F5] rounded text-left text-xs space-y-1 text-[#0C2340]">
+          <div className="p-4 bg-[#FAF8F5] rounded text-left text-xs space-y-1 text-[#0048BA]">
             <p className="text-[#6B7280]">Collection & Support:</p>
             <p className="font-semibold">{SITE_CONFIG.showroom.address}</p>
-            <p className="text-[#A38458]">WhatsApp: {SITE_CONFIG.contact.phone}</p>
+            <p className="text-[#B88A2D]">WhatsApp: {SITE_CONFIG.contact.phone}</p>
           </div>
           <Link href="/shop" className="btn-luxury-navy w-full text-xs py-3 block">
             Return to Collection
@@ -86,12 +86,12 @@ export default function CartPage() {
         </div>
       ) : cart.length === 0 ? (
         <div className="text-center py-20 bg-white rounded-lg border border-[#E8E4DC] space-y-4 max-w-xl mx-auto">
-          <div className="w-16 h-16 rounded-full bg-[#FAF8F5] text-[#A38458] flex items-center justify-center mx-auto border border-[#E8E4DC]">
+          <div className="w-16 h-16 rounded-full bg-[#FAF8F5] text-[#B88A2D] flex items-center justify-center mx-auto border border-[#E8E4DC]">
             <ShoppingBag className="w-7 h-7" />
           </div>
-          <h2 className="text-2xl font-serif text-[#0C2340]">Your Bag is Currently Empty</h2>
+          <h2 className="text-2xl font-serif text-[#0048BA]">Your Bag is Currently Empty</h2>
           <p className="text-xs text-[#6B7280] max-w-sm mx-auto">
-            Discover German Mono Filio teapots, fine porcelain dinnerware, and rare single-origin loose leaf teas.
+            Discover German Mono Filio teapots, fine dinnerware &amp; tableware, and rare single-origin loose leaf teas.
           </p>
           <Link href="/shop" className="btn-luxury-gold text-xs py-3 px-8 inline-block">
             Explore All Collections
@@ -111,7 +111,7 @@ export default function CartPage() {
                 ) : (
                   <span className="text-[#3A3D42]">
                     Add{' '}
-                    <strong className="text-[#0C2340]">
+                    <strong className="text-[#0048BA]">
                       {currency === 'GBP'
                         ? `£${remainingForFreeShipping.gbp.toFixed(0)}`
                         : `HK$ ${remainingForFreeShipping.hkd.toLocaleString()}`}
@@ -119,13 +119,13 @@ export default function CartPage() {
                     more for free delivery
                   </span>
                 )}
-                <span className="text-[11px] font-bold text-[#A38458]">
+                <span className="text-[11px] font-bold text-[#B88A2D]">
                   {freeShippingProgress}%
                 </span>
               </div>
               <div className="w-full bg-[#E8E4DC] h-1.5 rounded-full overflow-hidden">
                 <div
-                  className="bg-gradient-to-r from-[#C5A880] to-[#5B8276] h-full transition-all duration-500 ease-out"
+                  className="bg-gradient-to-r from-[#D1A345] to-[#5B8276] h-full transition-all duration-500 ease-out"
                   style={{ width: `${freeShippingProgress}%` }}
                 />
               </div>
@@ -150,7 +150,7 @@ export default function CartPage() {
                       <div className="flex justify-between items-start">
                         <Link
                           href={`/shop/product/${item.product.slug}`}
-                          className="text-sm font-serif font-semibold text-[#0C2340] hover:text-[#A38458] transition-colors"
+                          className="text-sm font-serif font-semibold text-[#0048BA] hover:text-[#B88A2D] transition-colors"
                         >
                           {item.product.name}
                         </Link>
@@ -163,7 +163,7 @@ export default function CartPage() {
                         </button>
                       </div>
                       {item.selectedVariant && (
-                        <p className="text-xs text-[#A38458] mt-0.5">{item.selectedVariant}</p>
+                        <p className="text-xs text-[#B88A2D] mt-0.5">{item.selectedVariant}</p>
                       )}
                       <p className="text-[11px] text-[#6B7280]">{item.product.category}</p>
                     </div>
@@ -174,24 +174,24 @@ export default function CartPage() {
                           onClick={() =>
                             updateQuantity(item.product.id, item.quantity - 1, item.selectedVariant)
                           }
-                          className="px-2.5 py-1 text-sm text-[#0C2340] hover:text-[#A38458]"
+                          className="px-2.5 py-1 text-sm text-[#0048BA] hover:text-[#B88A2D]"
                         >
                           <Minus className="w-3 h-3" />
                         </button>
-                        <span className="px-3 text-xs font-semibold text-[#0C2340]">
+                        <span className="px-3 text-xs font-semibold text-[#0048BA]">
                           {item.quantity}
                         </span>
                         <button
                           onClick={() =>
                             updateQuantity(item.product.id, item.quantity + 1, item.selectedVariant)
                           }
-                          className="px-2.5 py-1 text-sm text-[#0C2340] hover:text-[#A38458]"
+                          className="px-2.5 py-1 text-sm text-[#0048BA] hover:text-[#B88A2D]"
                         >
                           <Plus className="w-3 h-3" />
                         </button>
                       </div>
 
-                      <span className="text-sm font-bold font-serif text-[#0C2340]">
+                      <span className="text-sm font-bold font-serif text-[#0048BA]">
                         {formatPrice(
                           item.product.priceHKD * item.quantity,
                           item.product.priceGBP * item.quantity
@@ -210,12 +210,12 @@ export default function CartPage() {
                   type="checkbox"
                   checked={addGiftBox}
                   onChange={(e) => setAddGiftBox(e.target.checked)}
-                  className="rounded text-[#0C2340] focus:ring-[#C5A880]"
+                  className="rounded text-[#0048BA] focus:ring-[#D1A345]"
                 />
-                <Gift className="w-4 h-4 text-[#A38458]" />
+                <Gift className="w-4 h-4 text-[#B88A2D]" />
                 <div className="text-xs">
-                  <span className="font-semibold text-[#0C2340]">
-                    Include Complimentary Royal Gift Box & Gold Ribbon
+                  <span className="font-semibold text-[#0048BA]">
+                    Include Complimentary Royal Gift Box &amp; Gold Ribbon
                   </span>
                   <p className="text-[#6B7280]">
                     Finished by hand with a personalized handwritten card in our Central atelier.
@@ -227,21 +227,21 @@ export default function CartPage() {
 
           {/* Right Col: Order Summary */}
           <div className="bg-white p-6 rounded-lg border border-[#E8E4DC] space-y-6 h-fit shadow-xs">
-            <h3 className="text-lg font-serif font-semibold text-[#0C2340] border-b border-[#E8E4DC] pb-3">
+            <h3 className="text-lg font-serif font-semibold text-[#0048BA] border-b border-[#E8E4DC] pb-3">
               Order Summary
             </h3>
 
             <div className="space-y-3 text-xs">
               <div className="flex justify-between text-[#5C5C5C]">
                 <span>Items Subtotal:</span>
-                <span className="font-medium text-[#0C2340]">
+                <span className="font-medium text-[#0048BA]">
                   {formatPrice(subtotalHKD, subtotalGBP)}
                 </span>
               </div>
 
               <div className="flex justify-between text-[#5C5C5C]">
                 <span>Estimated Delivery:</span>
-                <span className="font-medium text-[#0C2340]">
+                <span className="font-medium text-[#0048BA]">
                   {freeShippingProgress >= 100 ? 'Complimentary' : 'HK$ 50 (or Central Pickup)'}
                 </span>
               </div>
@@ -252,8 +252,8 @@ export default function CartPage() {
               </div>
 
               <div className="pt-3 border-t border-[#E8E4DC] flex justify-between items-baseline">
-                <span className="text-sm font-semibold text-[#0C2340]">Total:</span>
-                <span className="text-2xl font-serif font-bold text-[#0C2340]">
+                <span className="text-sm font-semibold text-[#0048BA]">Total:</span>
+                <span className="text-2xl font-serif font-bold text-[#0048BA]">
                   {formatPrice(subtotalHKD, subtotalGBP)}
                 </span>
               </div>

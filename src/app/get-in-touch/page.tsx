@@ -10,15 +10,15 @@ export default function GetInTouchPage() {
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto space-y-3">
         <div className="flex items-center justify-center gap-2 text-xs text-[#6B7280]">
-          <Link href="/" className="hover:text-[#0C2340]">Home</Link>
+          <Link href="/" className="hover:text-[#0048BA]">Home</Link>
           <span>/</span>
-          <span className="text-[#0C2340] font-medium">Showroom & Concierge</span>
+          <span className="text-[#0048BA] font-medium">Showroom & Concierge</span>
         </div>
 
-        <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#C5A880]">
+        <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#D1A345]">
           Central Hong Kong Atelier
         </span>
-        <h1 className="text-3xl sm:text-5xl font-serif text-[#0C2340]">
+        <h1 className="text-3xl sm:text-5xl font-serif text-[#0048BA]">
           Get in Touch & Visit Our Showroom
         </h1>
         <p className="text-xs sm:text-sm text-[#5C5C5C] leading-relaxed">

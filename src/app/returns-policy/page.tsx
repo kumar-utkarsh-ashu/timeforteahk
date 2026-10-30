@@ -18,7 +18,7 @@ export default function ReturnsPolicyPage() {
       a: 'Due to food safety and hygiene regulations, opened tea caddies, loose leaf infusions, and perishable gift hamper contents cannot be returned unless verified defective or damaged upon delivery.',
     },
     {
-      q: 'What if my borosilicate glass or porcelain arrives damaged?',
+      q: 'What if my borosilicate glass or fine dinnerware arrives damaged?',
       a: 'Every shipment from Time for Tea HK is insured. In the unlikely event that an item arrives broken, please email time4teahk@gmail.com or WhatsApp us at +852 9865 6217 within 48 hours with a photograph of the damage. We will dispatch an immediate replacement or issue a full refund.',
     },
     {
@@ -36,15 +36,15 @@ export default function ReturnsPolicyPage() {
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto space-y-3">
         <div className="flex items-center justify-center gap-2 text-xs text-[#6B7280]">
-          <Link href="/" className="hover:text-[#0C2340]">Home</Link>
+          <Link href="/" className="hover:text-[#0048BA]">Home</Link>
           <span>/</span>
-          <span className="text-[#0C2340] font-medium">Returns Policy & Customer Care</span>
+          <span className="text-[#0048BA] font-medium">Returns Policy & Customer Care</span>
         </div>
 
-        <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#C5A880]">
+        <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#D1A345]">
           Client Assurance
         </span>
-        <h1 className="text-3xl sm:text-4xl font-serif text-[#0C2340]">
+        <h1 className="text-3xl sm:text-4xl font-serif text-[#0048BA]">
           Returns, Delivery & Guarantees
         </h1>
         <p className="text-xs sm:text-sm text-[#5C5C5C] leading-relaxed">
@@ -55,29 +55,29 @@ export default function ReturnsPolicyPage() {
       {/* 3 Pillars */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs">
         <div className="p-5 rounded bg-white border border-[#E8E4DC] text-center space-y-2">
-          <RotateCcw className="w-6 h-6 text-[#A38458] mx-auto" />
-          <h3 className="font-serif text-sm font-semibold text-[#0C2340]">14-Day Return Privilege</h3>
+          <RotateCcw className="w-6 h-6 text-[#B88A2D] mx-auto" />
+          <h3 className="font-serif text-sm font-semibold text-[#0048BA]">14-Day Return Privilege</h3>
           <p className="text-[#6B7280]">Hassle-free returns on all teaware, tableware, and table linens.</p>
         </div>
 
         <div id="shipping" className="p-5 rounded bg-white border border-[#E8E4DC] text-center space-y-2">
           <Truck className="w-6 h-6 text-[#5B8276] mx-auto" />
-          <h3 className="font-serif text-sm font-semibold text-[#0C2340]">Complimentary HK Delivery</h3>
+          <h3 className="font-serif text-sm font-semibold text-[#0048BA]">Complimentary HK Delivery</h3>
           <p className="text-[#6B7280]">On all orders over HK$ 800 across Hong Kong Island, Kowloon, and NT.</p>
         </div>
 
         <div className="p-5 rounded bg-white border border-[#E8E4DC] text-center space-y-2">
-          <ShieldCheck className="w-6 h-6 text-[#0C2340] mx-auto" />
-          <h3 className="font-serif text-sm font-semibold text-[#0C2340]">Authenticity Guaranteed</h3>
+          <ShieldCheck className="w-6 h-6 text-[#0048BA] mx-auto" />
+          <h3 className="font-serif text-sm font-semibold text-[#0048BA]">Authenticity Guaranteed</h3>
           <p className="text-[#6B7280]">100% genuine German Mono Filio teaware with official warranty.</p>
         </div>
       </div>
 
       {/* Return Procedure Details */}
       <div className="bg-white p-8 rounded-lg border border-[#E8E4DC] space-y-6 text-xs sm:text-sm text-[#3A3D42] leading-relaxed">
-        <h2 className="text-xl font-serif font-semibold text-[#0C2340]">Return & Exchange Protocol</h2>
+        <h2 className="text-xl font-serif font-semibold text-[#0048BA]">Return & Exchange Protocol</h2>
         <p>
-          To initiate a return or exchange, please contact our concierge team at <a href={`mailto:${SITE_CONFIG.contact.email}`} className="text-[#A38458] underline">{SITE_CONFIG.contact.email}</a> or via WhatsApp with your order number and the reason for return.
+          To initiate a return or exchange, please contact our concierge team at <a href={`mailto:${SITE_CONFIG.contact.email}`} className="text-[#B88A2D] underline">{SITE_CONFIG.contact.email}</a> or via WhatsApp with your order number and the reason for return.
         </p>
         <p>
           Once your return is authorized, you may either drop off the item at our Central Showroom (Stag Building, 4/F, 148 Queen&apos;s Road Central) or send it via courier. Refunds will be processed to your original payment method (Stripe / Credit Card / PayPal) within 3–5 business days of inspection.
@@ -86,17 +86,17 @@ export default function ReturnsPolicyPage() {
 
       {/* FAQ Accordion */}
       <div className="space-y-4">
-        <h2 className="text-xl font-serif font-semibold text-[#0C2340]">Frequently Asked Questions</h2>
+        <h2 className="text-xl font-serif font-semibold text-[#0048BA]">Frequently Asked Questions</h2>
         <div className="divide-y divide-[#E8E4DC] border border-[#E8E4DC] rounded-lg bg-white overflow-hidden">
           {faqs.map((faq, idx) => (
             <div key={idx} className="p-4 sm:p-5">
               <button
                 onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                className="w-full flex items-center justify-between text-left text-xs sm:text-sm font-semibold text-[#0C2340]"
+                className="w-full flex items-center justify-between text-left text-xs sm:text-sm font-semibold text-[#0048BA]"
               >
                 <span>{faq.q}</span>
                 <ChevronDown
-                  className={`w-4 h-4 text-[#A38458] transition-transform ${
+                  className={`w-4 h-4 text-[#B88A2D] transition-transform ${
                     openFaq === idx ? 'rotate-180' : ''
                   }`}
                 />
@@ -114,7 +114,7 @@ export default function ReturnsPolicyPage() {
       {/* Concierge Help Box */}
       <div className="p-6 rounded-lg bg-[#FAF8F5] border border-[#E8E4DC] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
         <div>
-          <p className="font-semibold text-[#0C2340]">Need Immediate Assistance with an Order?</p>
+          <p className="font-semibold text-[#0048BA]">Need Immediate Assistance with an Order?</p>
           <p className="text-[#6B7280]">Our Central team is available Monday to Saturday via WhatsApp.</p>
         </div>
         <a

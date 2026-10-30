@@ -12,7 +12,7 @@ export default function EventStylingPage() {
   return (
     <div className="space-y-16 sm:space-y-24 pb-20">
       {/* 1. Hero Banner */}
-      <section className="relative min-h-[55vh] flex items-center bg-[#0C2340] text-white overflow-hidden">
+      <section className="relative min-h-[55vh] flex items-center bg-[#0048BA] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=2000&q=80"
@@ -22,7 +22,7 @@ export default function EventStylingPage() {
             sizes="100vw"
             className="object-cover object-center opacity-35"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0C2340] via-[#0C2340]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#00358A] via-[#00358A]/85 to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 py-16 sm:py-24">
@@ -33,7 +33,7 @@ export default function EventStylingPage() {
               <span className="text-amber-200">Event Styling & Decor Hire</span>
             </div>
 
-            <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#C5A880]">
+            <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#D1A345]">
               Turnkey Hospitality & Tablescaping
             </span>
             <h1 className="text-3xl sm:text-5xl font-serif text-white leading-tight">
@@ -54,7 +54,7 @@ export default function EventStylingPage() {
                 rel="noopener noreferrer"
                 className="btn-luxury-outline-light text-xs py-3 px-6"
               >
-                <MessageSquare className="w-4 h-4 text-[#C5A880]" />
+                <MessageSquare className="w-4 h-4 text-[#D1A345]" />
                 <span>WhatsApp Event Consultation</span>
               </a>
             </div>
@@ -65,10 +65,10 @@ export default function EventStylingPage() {
       {/* 2. Service Packages Grid */}
       <section id="packages" className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
         <div className="text-center max-w-xl mx-auto space-y-2">
-          <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#C5A880]">
+          <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#D1A345]">
             Bespoke Tiers
           </span>
-          <h2 className="text-3xl font-serif text-[#0C2340]">Our Event Styling Experiences</h2>
+          <h2 className="text-3xl font-serif text-[#0048BA]">Our Event Styling Experiences</h2>
           <p className="text-xs text-[#6B7280]">
             Tailored for birthdays, bridal showers, baby showers, and luxury corporate brand previews.
           </p>
@@ -89,22 +89,22 @@ export default function EventStylingPage() {
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
                   />
-                  <div className="absolute top-3 left-3 bg-[#0C2340]/90 backdrop-blur-xs text-white text-[10px] font-bold px-2.5 py-1 rounded">
+                  <div className="absolute top-3 left-3 bg-[#0048BA]/90 backdrop-blur-xs text-white text-[10px] font-bold px-2.5 py-1 rounded">
                     {pkg.capacity}
                   </div>
                 </div>
 
                 <div className="p-6 space-y-4">
                   <div>
-                    <h3 className="text-xl font-serif font-semibold text-[#0C2340]">{pkg.title}</h3>
-                    <p className="text-xs text-[#A38458] mt-0.5">{pkg.subtitle}</p>
+                    <h3 className="text-xl font-serif font-semibold text-[#0048BA]">{pkg.title}</h3>
+                    <p className="text-xs text-[#B88A2D] mt-0.5">{pkg.subtitle}</p>
                     <p className="text-xs text-[#5C5C5C] mt-2.5 leading-relaxed">
                       {pkg.description}
                     </p>
                   </div>
 
                   <div className="pt-2 border-t border-[#E8E4DC] space-y-2 text-xs">
-                    <p className="font-semibold text-[#0C2340] uppercase tracking-wider text-[10px]">
+                    <p className="font-semibold text-[#0048BA] uppercase tracking-wider text-[10px]">
                       Package Inclusions:
                     </p>
                     {pkg.includedFeatures.map((feat, idx) => (
@@ -120,7 +120,7 @@ export default function EventStylingPage() {
               <div className="p-6 bg-[#FAF8F5] border-t border-[#E8E4DC] space-y-3">
                 <div className="flex justify-between items-baseline">
                   <span className="text-xs text-[#6B7280]">Starting Investment:</span>
-                  <span className="text-lg font-serif font-bold text-[#0C2340]">
+                  <span className="text-lg font-serif font-bold text-[#0048BA]">
                     HK$ {pkg.pricePerGuestHKD} <span className="text-xs font-normal text-[#6B7280]">/ guest</span>
                   </span>
                 </div>
@@ -133,7 +133,7 @@ export default function EventStylingPage() {
                   rel="noopener noreferrer"
                   className="btn-luxury-navy w-full py-2.5 text-xs flex items-center justify-center gap-1.5"
                 >
-                  <MessageSquare className="w-3.5 h-3.5 text-[#C5A880]" />
+                  <MessageSquare className="w-3.5 h-3.5 text-[#D1A345]" />
                   <span>Reserve on WhatsApp</span>
                 </a>
               </div>
@@ -146,10 +146,10 @@ export default function EventStylingPage() {
       <section className="bg-[#FAF8F5] py-16 border-y border-[#E8E4DC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
           <div className="text-center max-w-xl mx-auto space-y-1">
-            <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#C5A880]">
+            <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#D1A345]">
               The Hire Inventory
             </span>
-            <h3 className="text-2xl sm:text-3xl font-serif text-[#0C2340]">
+            <h3 className="text-2xl sm:text-3xl font-serif text-[#0048BA]">
               Curated Tableware for Event Hire
             </h3>
             <p className="text-xs text-[#6B7280]">
@@ -159,23 +159,23 @@ export default function EventStylingPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-xs">
             <div className="p-5 rounded bg-white border border-[#E8E4DC] space-y-2">
-              <Sparkles className="w-5 h-5 text-[#C5A880] mx-auto" />
-              <p className="font-semibold text-[#0C2340]">Mono Filio Teapots</p>
+              <Sparkles className="w-5 h-5 text-[#D1A345] mx-auto" />
+              <p className="font-semibold text-[#0048BA]">Mono Filio Teapots</p>
               <p className="text-[11px] text-[#6B7280]">Includes integrated stainless warmer base and tea-light</p>
             </div>
             <div className="p-5 rounded bg-white border border-[#E8E4DC] space-y-2">
               <Sparkles className="w-5 h-5 text-[#5B8276] mx-auto" />
-              <p className="font-semibold text-[#0C2340]">Empress 3-Tier Stands</p>
+              <p className="font-semibold text-[#0048BA]">Empress 3-Tier Stands</p>
               <p className="text-[11px] text-[#6B7280]">Polished brass central stems with fine bone china plates</p>
             </div>
             <div className="p-5 rounded bg-white border border-[#E8E4DC] space-y-2">
-              <Sparkles className="w-5 h-5 text-[#A38458] mx-auto" />
-              <p className="font-semibold text-[#0C2340]">Handcrafted Linen</p>
+              <Sparkles className="w-5 h-5 text-[#B88A2D] mx-auto" />
+              <p className="font-semibold text-[#0048BA]">Handcrafted Linen</p>
               <p className="text-[11px] text-[#6B7280]">French flax napkins and table runners, professionally laundered</p>
             </div>
             <div className="p-5 rounded bg-white border border-[#E8E4DC] space-y-2">
-              <Sparkles className="w-5 h-5 text-[#0C2340] mx-auto" />
-              <p className="font-semibold text-[#0C2340]">Silverware & Coupes</p>
+              <Sparkles className="w-5 h-5 text-[#0048BA] mx-auto" />
+              <p className="font-semibold text-[#0048BA]">Silverware & Coupes</p>
               <p className="text-[11px] text-[#6B7280]">Victorian-pattern pastry forks, tea tongs, and crystal glassware</p>
             </div>
           </div>

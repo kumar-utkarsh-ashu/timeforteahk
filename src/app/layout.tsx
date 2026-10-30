@@ -10,7 +10,7 @@ import { QuickViewModal } from '@/components/ui/QuickViewModal';
 export const metadata: Metadata = {
   title: 'Time for Tea HK — Luxury Afternoon Tea, Mono Teapots & Event Styling',
   description:
-    'Exclusive distributor of German Mono Filio teapots in Hong Kong. Curated porcelain tableware, French flax linen, single-estate loose leaf teas, and bespoke event styling.',
+    'Exclusive distributor of German Mono Filio teapots in Hong Kong. Curated tableware, French flax linen, single-estate loose leaf teas, and bespoke event styling.',
   keywords: [
     'Time for Tea HK',
     'Mono Filio Teapot',

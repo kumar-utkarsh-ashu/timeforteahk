@@ -7,16 +7,16 @@ interface BadgeProps {
 }
 
 export function Badge({ label, variant = 'gold', className = '' }: BadgeProps) {
-  let styleClasses = 'bg-[#FAF5EE] text-[#A38458] border-[#E0CEB5]';
+  let styleClasses = 'bg-[#FAF5EE] text-[#B88A2D] border-[#EBD6A7]';
 
   if (variant === 'navy') {
-    styleClasses = 'bg-[#0C2340] text-white border-[#0C2340]';
+    styleClasses = 'bg-[#0048BA] text-white border-[#0048BA]';
   } else if (variant === 'sage') {
     styleClasses = 'bg-[#EBF2EE] text-[#436357] border-[#CFDFD6]';
   } else if (variant === 'rose') {
     styleClasses = 'bg-[#FFF0F3] text-[#C24168] border-[#FBCFE8]';
   } else if (variant === 'outline') {
-    styleClasses = 'bg-white/80 text-[#0C2340] border-[#C5A880]';
+    styleClasses = 'bg-white/80 text-[#0048BA] border-[#D1A345]';
   }
 
   return (
