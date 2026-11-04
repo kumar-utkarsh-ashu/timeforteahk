@@ -4,13 +4,12 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Client Design Specifications & Brand Guidelines
 
-### 1. Brand Color Palette (Aligned with Live Website `timeforteahk.com`)
-* **Primary Royal Blue**: `#0048BA` (Cobalt Royal Blue — used for main header, primary accents, prominent brand statements).
-* **Deep Royal Navy**: `#00358A` (Deepened Royal Blue for secondary backgrounds, hovers, card overlays).
-* **Midnight Royal**: `#00225A` (Rich dark royal contrast for deep text and night sections).
-* **Warm Honey Gold**: `#D1A345` / `#D0A444` (Used for logo crest, buttons, borders, currency switcher, cart indicators).
-* **Gold Shimmer / Accent**: `#DFC7A5` / `#E0CEB5` (Subtle borders and highlights).
-* **Canvas Ivory**: `#FAF8F5` (Soft warm page background).
+### 1. Brand Color Palette & "White & Blue" Style Guidelines (Aligned with `timeforteahk.com`)
+* **Primary Royal Blue**: `#0048BA` (Cobalt Royal Blue — used for the main header, primary typography headings, and prominent interactive buttons).
+* **Deep Royal Navy**: `#00358A` (Deepened Royal Blue for top bar, footer, and active hover states).
+* **Warm Honey Gold**: `#D1A345` / `#B88A2D` (Used for logo crest, badges, borders, currency switcher, and accent buttons).
+* **Canvas Ivory & White**: `#FAF8F5` / `#FFFFFF` (Primary light backgrounds for hero and section content).
+* **"White & Blue" Style Rule**: Maintain a clean, bright, white-and-blue look. Avoid placing heavy solid blue hero backgrounds directly under the blue header ("blue and blue"). The header is Royal Blue, transitioning immediately into an airy light/white canvas with Royal Blue serif typography and rich teatime visuals.
 
 ### 2. Department & Category Taxonomy (Aligned with Image 2 & Live Store)
 The store features genuine nested hierarchical categories and subcategories:
@@ -40,7 +39,12 @@ The store features genuine nested hierarchical categories and subcategories:
 
 ## Version Changelog
 
-### Version 2.0 (Current)
+### Version 3.0 (Current)
+* **"White & Blue" Aesthetic Realignment**: Shifted hero and section backgrounds from solid blue blocks ("blue on blue") to a pristine, light luxury canvas (`#FAF8F5` / `#FFFFFF`).
+* **Royal Blue Typography**: Set primary H1/H2 headlines in signature Royal Blue (`#0048BA`) with Warm Honey Gold (`#D1A345`) badges and subtitles.
+* **Frosted White Floating Cards**: Redesigned floating cards and hero visual containers to light frosted glassmorphism with delicate gold borders, ensuring high contrast and luxury boutique refinement matching client Image 1.
+
+### Version 2.0
 * **Real Subcategory Taxonomy**: Built complete Category and Subcategory architecture matching Image 2 and `timeforteahk.com`.
 * **Mega-Menu Redesign**: Overhauled desktop navigation into a spacious 3-column layout with clean category headers and indented, clickable subcategory links. Removed cramped layout, colliding text, and tag pills.
 * **Mobile Navigation Tree**: Implemented hierarchical accordion navigation reflecting Image 2 with direct access to subcategories.

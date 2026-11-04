@@ -27,64 +27,66 @@ export default function HomePage() {
 
   return (
     <div className="space-y-20 sm:space-y-28 pb-20">
-      {/* 1. Hero Editorial Section - Blended Layout */}
-      <section className="relative min-h-[calc(100vh-100px)] lg:h-[calc(100vh-100px)] lg:max-h-[820px] flex items-center bg-[#0048BA] text-white overflow-hidden">
-        {/* Subtle Ambient Background Gradient */}
-        <div className="absolute inset-0 bg-radial-at-t from-[#00358A]/50 via-[#0048BA] to-[#00225A] pointer-events-none" />
+      {/* 1. Hero Editorial Section - Refined "White & Blue" Luxury Aesthetic (Image 1 Style) */}
+      <section className="relative min-h-[calc(100vh-100px)] lg:h-[calc(100vh-100px)] lg:max-h-[820px] flex items-center bg-[#FAF8F5] text-[#2C2E33] overflow-hidden border-b border-[#E8E4DC]">
+        {/* Soft Ambient Light Glow & Subtle Luxury Texture */}
+        <div className="absolute inset-0 bg-[radial-gradient(#0048BA_1px,transparent_1px)] [background-size:28px_28px] opacity-[0.035] pointer-events-none" />
+        <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-[#0048BA]/5 blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-[#D1A345]/10 blur-3xl pointer-events-none" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-8 xl:py-10 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-10 xl:py-12 w-full">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-center">
             {/* Left Column: Editorial Headline & CTAs */}
             <div className="md:col-span-7 space-y-4 lg:space-y-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D1A345]/15 border border-[#D1A345]/30 text-[#DFBE77] text-xs font-semibold">
-                <Sparkles className="w-3.5 h-3.5 text-[#D1A345]" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0048BA]/10 border border-[#0048BA]/20 text-[#0048BA] text-xs font-semibold">
+                <Sparkles className="w-3.5 h-3.5 text-[#B88A2D]" />
                 <span>Curating the Art of Tea &amp; Entertaining</span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-serif text-white leading-[1.12] tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-serif text-[#0048BA] leading-[1.12] tracking-tight">
                 Make Tea Time a Time to Remember.
               </h1>
 
-              <p className="text-xs sm:text-sm lg:text-base text-white/90 leading-relaxed font-light max-w-xl">
-                Elevating the afternoon tea ritual from routine into mindful luxury. Explore German-engineered <strong>Mono Filio</strong> teaware, artisanal French flax linens, fine tableware, and turnkey event styling in Hong Kong.
+              <p className="text-xs sm:text-sm lg:text-base text-[#4A4D52] leading-relaxed font-light max-w-xl">
+                Elevating the afternoon tea ritual from routine into mindful luxury. Explore German-engineered <strong className="text-[#0048BA] font-semibold">Mono Filio</strong> teaware, artisanal French flax linens, fine tableware, and turnkey event styling in Hong Kong.
               </p>
 
               {/* CTAs */}
               <div className="pt-1 flex flex-wrap items-center gap-3 sm:gap-4">
-                <Link href="/shop" className="btn-luxury-gold text-xs px-6 py-3 sm:px-7 sm:py-3.5">
+                <Link href="/shop" className="btn-luxury-navy text-xs px-6 py-3 sm:px-7 sm:py-3.5">
                   <span>Explore The Collection</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
 
                 <Link
                   href="/custom-hamper"
-                  className="btn-luxury-outline-light text-xs px-6 py-3 sm:px-7 sm:py-3.5"
+                  className="btn-luxury-outline text-xs px-6 py-3 sm:px-7 sm:py-3.5"
                 >
-                  <Gift className="w-4 h-4 text-[#D1A345]" />
+                  <Gift className="w-4 h-4 text-[#B88A2D]" />
                   <span>Curate Bespoke Hamper</span>
                 </Link>
               </div>
 
               {/* Trust Badges */}
-              <div className="pt-4 sm:pt-5 lg:pt-6 grid grid-cols-3 gap-4 sm:gap-6 border-t border-white/20 text-xs text-white/80">
+              <div className="pt-4 sm:pt-5 lg:pt-6 grid grid-cols-3 gap-4 sm:gap-6 border-t border-[#E8E4DC] text-xs">
                 <div>
-                  <p className="font-serif text-sm sm:text-base font-semibold text-white">Mono Germany</p>
-                  <p className="text-[10px] sm:text-[11px] text-white/70">Exclusive HK Partner</p>
+                  <p className="font-serif text-sm sm:text-base font-semibold text-[#0048BA]">Mono Germany</p>
+                  <p className="text-[10px] sm:text-[11px] text-[#6B7280]">Exclusive HK Partner</p>
                 </div>
                 <div>
-                  <p className="font-serif text-sm sm:text-base font-semibold text-white">100% French Flax</p>
-                  <p className="text-[10px] sm:text-[11px] text-white/70">Hand-Embroidered</p>
+                  <p className="font-serif text-sm sm:text-base font-semibold text-[#0048BA]">100% French Flax</p>
+                  <p className="text-[10px] sm:text-[11px] text-[#6B7280]">Hand-Embroidered</p>
                 </div>
                 <div>
-                  <p className="font-serif text-sm sm:text-base font-semibold text-white">Central Atelier</p>
-                  <p className="text-[10px] sm:text-[11px] text-white/70">148 Queen&apos;s Road</p>
+                  <p className="font-serif text-sm sm:text-base font-semibold text-[#0048BA]">Central Atelier</p>
+                  <p className="text-[10px] sm:text-[11px] text-[#6B7280]">148 Queen&apos;s Road</p>
                 </div>
               </div>
             </div>
 
             {/* Right Column: Blended High-Resolution Hero Visual */}
             <div className="md:col-span-5 relative w-full h-[280px] sm:h-[340px] md:h-[380px] lg:h-[440px] xl:h-[480px] max-h-[calc(100vh-200px)] flex items-center justify-center">
-              <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
+              <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-[#E8E4DC] group bg-white">
                 <Image
                   src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1200&q=85"
                   alt="Mono Filio Teapot Candlelight Afternoon Tea Ritual"
@@ -93,28 +95,26 @@ export default function HomePage() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 45vw, 500px"
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
-                {/* Seamless Edge Gradient Masks blending smoothly into the royal blue palette */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0048BA]/70 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#00225A]/85 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute inset-0 ring-1 ring-inset ring-white/15 rounded-2xl pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-2xl pointer-events-none" />
 
-                {/* Floating Editorial Badge - Aligned with Image 3 correction */}
-                <div className="absolute bottom-4 left-4 right-4 p-3 sm:p-3.5 rounded-xl bg-[#00225A]/92 backdrop-blur-md border border-[#D1A345]/30 shadow-xl">
+                {/* Floating Editorial Badge - Frosted White Luxury Card */}
+                <div className="absolute bottom-4 left-4 right-4 p-3.5 sm:p-4 rounded-xl bg-white/95 backdrop-blur-md border border-[#E8E4DC] shadow-2xl text-left">
                   <div className="flex items-center justify-between gap-3">
                     <div className="min-w-0">
-                      <span className="text-[9px] uppercase font-bold tracking-widest text-[#D1A345]">
+                      <span className="text-[9px] uppercase font-bold tracking-widest text-[#B88A2D]">
                         German Engineering Classic
                       </span>
-                      <p className="font-serif text-xs sm:text-sm font-semibold text-white truncate">
+                      <p className="font-serif text-xs sm:text-sm font-bold text-[#0048BA] truncate">
                         Mono Filio Teapot &amp; Warmer
                       </p>
-                      <p className="text-[10px] sm:text-[11px] text-white/75 truncate">
+                      <p className="text-[10px] sm:text-[11px] text-[#5C5C5C] truncate">
                         Duran® Borosilicate Glass &amp; 18/10 Stainless Steel
                       </p>
                     </div>
                     <Link
                       href="/shop/teapots-and-accessories"
-                      className="shrink-0 p-2 sm:p-2.5 rounded-full bg-[#D1A345] text-white hover:bg-white hover:text-[#0048BA] transition-colors"
+                      className="shrink-0 p-2 sm:p-2.5 rounded-full bg-[#0048BA] text-white hover:bg-[#D1A345] transition-colors shadow-sm"
                       aria-label="View Mono Filio Teapots"
                     >
                       <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -291,12 +291,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. The Mono Filio Engineering Spotlight */}
-      <section className="bg-[#00358A] text-white py-16 sm:py-24">
+      {/* 3. The Mono Filio Engineering Spotlight - Elegant "White & Blue" Presentation */}
+      <section className="bg-[#FAF8F5] py-16 sm:py-24 border-y border-[#E8E4DC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Visual Teapot Showcase */}
-            <div className="relative aspect-square sm:aspect-4/3 rounded-lg overflow-hidden border border-white/20 shadow-2xl">
+            <div className="relative aspect-square sm:aspect-4/3 rounded-xl overflow-hidden border border-[#E8E4DC] shadow-xl bg-white">
               <Image
                 src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1200&q=85"
                 alt="Mono Filio Teapot with Candle Warmer"
@@ -304,45 +304,45 @@ export default function HomePage() {
                 sizes="(max-width: 1024px) 100vw, 600px"
                 className="object-cover"
               />
-              <div className="absolute bottom-4 left-4 bg-[#00225A]/90 backdrop-blur-md p-4 rounded border border-[#D1A345]/30 max-w-xs">
-                <span className="text-[9px] uppercase font-bold text-[#D1A345]">Design Classic</span>
-                <p className="text-xs font-serif text-white">Designed in Germany by Tassilo von Grolman</p>
-                <p className="text-[10px] text-white/70 mt-0.5">Permanent Collection at Design Museum London</p>
+              <div className="absolute bottom-4 left-4 right-4 sm:right-auto bg-white/95 backdrop-blur-md p-4 rounded-xl border border-[#E8E4DC] shadow-xl max-w-sm">
+                <span className="text-[9px] uppercase font-bold text-[#B88A2D] tracking-wider">Design Classic</span>
+                <p className="text-xs sm:text-sm font-serif font-bold text-[#0048BA]">Designed in Germany by Tassilo von Grolman</p>
+                <p className="text-[10px] sm:text-[11px] text-[#5C5C5C] mt-0.5">Permanent Collection at Design Museum London</p>
               </div>
             </div>
 
             {/* Story & Specifications */}
             <div className="space-y-6">
               <div className="space-y-2">
-                <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#D1A345]">
+                <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#B88A2D]">
                   Engineering The Perfect Steep
                 </span>
-                <h2 className="text-3xl sm:text-4xl font-serif text-white">
+                <h2 className="text-3xl sm:text-4xl font-serif text-[#0048BA]">
                   The Iconic Mono Filio Teapot
                 </h2>
-                <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-light">
+                <p className="text-xs sm:text-sm text-[#4A4D52] leading-relaxed font-light">
                   Suspended within a graceful 18/10 stainless steel frame, the heat-resistant Duran® borosilicate glass bowl allows you to witness the leaves unfurl in a dance of light and color. Powered by a single candlelight warmer beneath, your tea remains at the exact drinking temperature without growing bitter.
                 </p>
               </div>
 
               <div className="grid grid-cols-2 gap-4 pt-2 text-xs">
-                <div className="p-4 rounded bg-white/5 border border-white/10 space-y-1">
-                  <Shield className="w-5 h-5 text-[#D1A345]" />
-                  <p className="font-semibold text-white">Duran® Borosilicate Glass</p>
-                  <p className="text-[11px] text-white/60">Thermal shock resistant up to 150°C</p>
+                <div className="p-4 rounded-xl bg-white border border-[#E8E4DC] shadow-xs space-y-1">
+                  <Shield className="w-5 h-5 text-[#0048BA]" />
+                  <p className="font-semibold text-[#0048BA]">Duran® Borosilicate Glass</p>
+                  <p className="text-[11px] text-[#6B7280]">Thermal shock resistant up to 150°C</p>
                 </div>
 
-                <div className="p-4 rounded bg-white/5 border border-white/10 space-y-1">
-                  <Sparkles className="w-5 h-5 text-[#DFBE77]" />
-                  <p className="font-semibold text-white">Integrated Tea Warmer</p>
-                  <p className="text-[11px] text-white/60">Gentle candlelight keeps tea at 65°C</p>
+                <div className="p-4 rounded-xl bg-white border border-[#E8E4DC] shadow-xs space-y-1">
+                  <Sparkles className="w-5 h-5 text-[#B88A2D]" />
+                  <p className="font-semibold text-[#0048BA]">Integrated Tea Warmer</p>
+                  <p className="text-[11px] text-[#6B7280]">Gentle candlelight keeps tea at 65°C</p>
                 </div>
               </div>
 
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <Link
                   href="/shop/teapots-and-accessories"
-                  className="btn-luxury-gold text-xs py-3.5 px-6"
+                  className="btn-luxury-navy text-xs py-3.5 px-6"
                 >
                   <span>Shop Mono Filio Teapots</span>
                   <ArrowRight className="w-4 h-4" />
@@ -350,7 +350,7 @@ export default function HomePage() {
 
                 <Link
                   href="/our-story"
-                  className="btn-luxury-outline-light text-xs py-3.5 px-6"
+                  className="btn-luxury-outline text-xs py-3.5 px-6"
                 >
                   <span>Read The Mono Heritage</span>
                 </Link>
@@ -492,24 +492,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. Helpline / Concierge Banner */}
+      {/* 7. Helpline / Concierge Banner - "White & Blue" Presentation */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="relative rounded-2xl overflow-hidden bg-[#00358A] text-white p-8 sm:p-12 border border-[#D1A345]/30 shadow-xl">
+        <div className="relative rounded-2xl overflow-hidden bg-[#FAF8F5] text-[#2C2E33] p-8 sm:p-12 border border-[#E8E4DC] shadow-sm">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-7 space-y-3">
-              <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#DFBE77]">
+              <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#B88A2D]">
                 Any Question?
               </span>
-              <h3 className="text-2xl sm:text-4xl font-serif text-white">
+              <h3 className="text-2xl sm:text-4xl font-serif text-[#0048BA]">
                 (+852) 9865 6217
               </h3>
-              <p className="text-xs sm:text-sm text-white/85 max-w-lg leading-relaxed font-light">
+              <p className="text-xs sm:text-sm text-[#5C5C5C] max-w-lg leading-relaxed font-light">
                 Should you have any questions, we would be delighted to help. Simply message our concierge on WhatsApp or telephone our Central showroom team directly.
               </p>
               <div className="pt-2 flex flex-wrap gap-3">
                 <a
                   href="tel:+85298656217"
-                  className="btn-luxury-gold text-xs py-3 px-6"
+                  className="btn-luxury-navy text-xs py-3 px-6"
                 >
                   <Phone className="w-3.5 h-3.5" />
                   <span>Make A Call</span>
@@ -518,14 +518,14 @@ export default function HomePage() {
                   href={SITE_CONFIG.contact.whatsAppLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-luxury-outline-light text-xs py-3 px-6"
+                  className="btn-luxury-outline text-xs py-3 px-6"
                 >
-                  <MessageSquare className="w-3.5 h-3.5 text-[#D1A345]" />
+                  <MessageSquare className="w-3.5 h-3.5 text-[#0048BA]" />
                   <span>Contact Us (WhatsApp)</span>
                 </a>
               </div>
             </div>
-            <div className="md:col-span-5 relative h-52 sm:h-64 rounded-xl overflow-hidden border border-white/10 hidden md:block">
+            <div className="md:col-span-5 relative h-52 sm:h-64 rounded-xl overflow-hidden border border-[#E8E4DC] hidden md:block bg-white shadow-xs">
               <Image
                 src="/images/any-question.png"
                 alt="Time for Tea Concierge Helpline"
