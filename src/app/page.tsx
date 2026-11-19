@@ -23,6 +23,7 @@ export default function HomePage() {
       'mono-filio-1-5l',
     ].includes(p.id)
   );
+  const christmasProducts = PRODUCTS.filter((p) => p.categorySlug === 'christmas');
   const heroTablescape = TABLESCAPE_GALLERY[0];
 
   return (
@@ -291,7 +292,70 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. The Mono Filio Engineering Spotlight - Elegant "White & Blue" Presentation */}
+      {/* 4. Christmas Collection Seasonal Spotlight */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center bg-[#FAF8F5] rounded-2xl border border-[#E8E4DC] p-6 sm:p-10 lg:p-12 shadow-xs">
+          {/* Left Column: Editorial Narrative & Feature Highlights */}
+          <div className="lg:col-span-5 space-y-5">
+            <div className="space-y-2">
+              <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#D1A345]">
+                Seasonal Edition
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif text-[#0048BA] leading-snug">
+                The Christmas Collection
+              </h2>
+              <p className="text-xs sm:text-sm text-[#5C5C5C] leading-relaxed">
+                Celebrate festive teatime with handcrafted holiday tablescapes, ambient candlelight, and luxury afternoon tea gift selections designed to make every seasonal gathering feel special.
+              </p>
+            </div>
+
+            {/* Highlights */}
+            <div className="space-y-2.5 text-xs">
+              <div className="p-3.5 rounded-lg bg-white border border-[#E8E4DC] flex items-start gap-3 shadow-2xs">
+                <Gift className="w-4 h-4 text-[#D1A345] shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-[#0048BA]">Festive Tablescape Hampers</p>
+                  <p className="text-[#6B7280] text-[11px] mt-0.5">
+                    Curated holiday napkin rings, French linen &amp; winter spiced tea in keepsake presentation boxes.
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-3.5 rounded-lg bg-white border border-[#E8E4DC] flex items-start gap-3 shadow-2xs">
+                <Sparkles className="w-4 h-4 text-[#B88A2D] shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-[#0048BA]">Holiday Candlelight Ambiance</p>
+                  <p className="text-[#6B7280] text-[11px] mt-0.5">
+                    Solid polished brass stems with heat-resistant borosilicate hurricane glass.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* CTAs */}
+            <div className="pt-2 flex flex-wrap gap-3">
+              <Link href="/shop/christmas" className="btn-luxury-navy text-xs py-3 px-6">
+                <span>Shop Christmas Collection</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link href="/custom-hamper" className="btn-luxury-outline text-xs py-3 px-6 bg-white">
+                <span>Curate Festive Hamper</span>
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Column: The 2 Official Christmas Products */}
+          <div className="lg:col-span-7">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {christmasProducts.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. The Mono Filio Engineering Spotlight - Elegant "White & Blue" Presentation */}
       <section className="bg-[#FAF8F5] py-16 sm:py-24 border-y border-[#E8E4DC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

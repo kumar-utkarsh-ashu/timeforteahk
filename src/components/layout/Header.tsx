@@ -34,11 +34,32 @@ export function Header() {
 
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [isShopDropdownOpen, setIsShopDropdownOpen] = useState(false);
+  const [dropdownOffset, setDropdownOffset] = useState<number>(0);
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const dropdownContainerRef = useRef<HTMLDivElement | null>(null);
 
+  const calculatePosition = () => {
+    if (dropdownContainerRef.current) {
+      const rect = dropdownContainerRef.current.getBoundingClientRect();
+      const targetWidth = Math.min(760, window.innerWidth - 32);
+      const rightMargin = 20;
+      const expectedRight = rect.left + targetWidth;
+      const maxAllowedRight = window.innerWidth - rightMargin;
+
+      if (expectedRight > maxAllowedRight) {
+        const overflow = expectedRight - maxAllowedRight;
+        // Shift left, but ensure we keep at least a safe margin from the left of the screen
+        const maxShift = Math.max(0, rect.left - 16);
+        setDropdownOffset(-Math.min(overflow, maxShift));
+      } else {
+        setDropdownOffset(0);
+      }
+    }
+  };
+
   const handleMouseEnter = () => {
     if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
+    calculatePosition();
     setIsShopDropdownOpen(true);
   };
 
@@ -54,6 +75,24 @@ export function Header() {
       setIsShopDropdownOpen(false);
     });
   }, [pathname]);
+
+  // Recalculate position whenever dropdown opens
+  useEffect(() => {
+    if (isShopDropdownOpen) {
+      calculatePosition();
+    }
+  }, [isShopDropdownOpen]);
+
+  // Window resize listener to keep dropdown within viewport
+  useEffect(() => {
+    const handleResize = () => {
+      if (isShopDropdownOpen) {
+        calculatePosition();
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isShopDropdownOpen]);
 
   // Click outside listener for touch devices & clicking away
   useEffect(() => {
@@ -166,7 +205,10 @@ export function Header() {
             >
               <button
                 type="button"
-                onClick={() => setIsShopDropdownOpen(!isShopDropdownOpen)}
+                onClick={() => {
+                  calculatePosition();
+                  setIsShopDropdownOpen(!isShopDropdownOpen);
+                }}
                 className={`hover:text-[#D1A345] transition-colors flex items-center gap-1 cursor-pointer py-1 uppercase tracking-wider ${
                   pathname.startsWith('/shop') || pathname === '/custom-hamper'
                     ? 'text-[#D1A345] border-b-2 border-[#D1A345]'
@@ -187,14 +229,17 @@ export function Header() {
               {/* Mega-Dropdown Panel: Spacious 3-column luxury category & subcategory hierarchy */}
               {isShopDropdownOpen && (
                 <div
-                  className="absolute top-full -left-6 xl:left-0 pt-3 w-[780px] xl:w-[840px] max-w-[calc(100vw-32px)] z-50 animate-in fade-in zoom-in-95 duration-150"
+                  className="absolute top-full pt-3 w-[720px] xl:w-[740px] max-w-[calc(100vw-32px)] z-50 animate-in fade-in zoom-in-95 duration-150 whitespace-normal normal-case font-normal"
+                  style={{
+                    left: `${dropdownOffset}px`,
+                  }}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="bg-white rounded-xl shadow-2xl border border-[#E8E4DC] p-6 text-left">
+                  <div className="bg-white rounded-xl shadow-2xl border border-[#E8E4DC] p-5 sm:p-6 text-left">
                     {/* Seasonal Collections Banner Bar */}
-                    <div className="mb-5 pb-3 border-b border-[#E8E4DC] flex items-center justify-between gap-4 bg-[#FAF8F5] p-3.5 rounded-lg">
-                      <div className="flex items-center gap-3">
+                    <div className="mb-5 pb-3 border-b border-[#E8E4DC] flex flex-wrap sm:flex-nowrap items-center justify-between gap-3 bg-[#FAF8F5] p-3.5 rounded-lg">
+                      <div className="flex items-center gap-2.5 shrink-0">
                         <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#D1A345]">
                           Seasonal
                         </span>
@@ -202,16 +247,16 @@ export function Header() {
                           Featured Holiday &amp; Charity Editions
                         </span>
                       </div>
-                      <div className="flex items-center gap-2.5">
+                      <div className="flex items-center gap-2 shrink-0">
                         <Link
                           href="/shop/pinkribbon"
-                          className="px-3 py-1 rounded bg-[#FFF0F3] text-[#C24168] text-xs font-semibold hover:bg-[#FFE0E6] transition-colors flex items-center gap-1"
+                          className="px-2.5 py-1 rounded bg-[#FFF0F3] text-[#C24168] text-[11px] font-semibold hover:bg-[#FFE0E6] transition-colors flex items-center gap-1 shrink-0 whitespace-nowrap"
                         >
-                          <span>🎗️ Pink Ribbon October</span>
+                          <span>🎗️ Pink Ribbon</span>
                         </Link>
                         <Link
                           href="/shop/christmas"
-                          className="px-3 py-1 rounded bg-[#EBF2EE] text-[#436357] text-xs font-semibold hover:bg-[#DCEAE2] transition-colors flex items-center gap-1"
+                          className="px-2.5 py-1 rounded bg-[#EBF2EE] text-[#436357] text-[11px] font-semibold hover:bg-[#DCEAE2] transition-colors flex items-center gap-1 shrink-0 whitespace-nowrap"
                         >
                           <span>🎄 Christmas Collection</span>
                         </Link>
@@ -221,7 +266,7 @@ export function Header() {
                     {/* 3 Balanced Hierarchy Columns: Category Headers with Clean Subcategory Lists */}
                     <div className="grid grid-cols-3 gap-6">
                       {/* Column 1: Tableware */}
-                      <div className="space-y-4">
+                      <div className="space-y-4 min-w-0">
                         <div>
                           <Link
                             href="/shop/tableware"
@@ -236,7 +281,7 @@ export function Header() {
                             <li>
                               <Link
                                 href="/shop/tableware?sub=plates-and-teacups"
-                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all"
+                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all break-words leading-snug"
                               >
                                 Plates and Tea Cups
                               </Link>
@@ -244,7 +289,7 @@ export function Header() {
                             <li>
                               <Link
                                 href="/shop/tableware?sub=placemats"
-                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all"
+                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all break-words leading-snug"
                               >
                                 Placemats
                               </Link>
@@ -252,7 +297,7 @@ export function Header() {
                             <li>
                               <Link
                                 href="/shop/tableware?sub=napkin-rings"
-                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all"
+                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all break-words leading-snug"
                               >
                                 Napkin Rings
                               </Link>
@@ -260,7 +305,7 @@ export function Header() {
                             <li>
                               <Link
                                 href="/shop/tableware?sub=candles-and-holders"
-                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all"
+                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all break-words leading-snug"
                               >
                                 Candles and Holders
                               </Link>
@@ -270,7 +315,7 @@ export function Header() {
                       </div>
 
                       {/* Column 2: Table Linen & Mono Teapots */}
-                      <div className="space-y-5">
+                      <div className="space-y-5 min-w-0">
                         {/* Table Linen */}
                         <div>
                           <Link
@@ -286,7 +331,7 @@ export function Header() {
                             <li>
                               <Link
                                 href="/shop/table-linen?sub=napkins"
-                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all"
+                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all break-words leading-snug"
                               >
                                 Napkins
                               </Link>
@@ -294,7 +339,7 @@ export function Header() {
                             <li>
                               <Link
                                 href="/shop/table-linen?sub=tablecloths"
-                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all"
+                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all break-words leading-snug"
                               >
                                 Tablecloths
                               </Link>
@@ -322,7 +367,7 @@ export function Header() {
                             <li>
                               <Link
                                 href="/shop/teapots-and-accessories?sub=teapots"
-                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all"
+                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all break-words leading-snug"
                               >
                                 Teapots (Mono Filio)
                               </Link>
@@ -330,7 +375,7 @@ export function Header() {
                             <li>
                               <Link
                                 href="/shop/teapots-and-accessories?sub=accessories"
-                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all"
+                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all break-words leading-snug"
                               >
                                 Accessories &amp; Replacement Glass
                               </Link>
@@ -340,7 +385,7 @@ export function Header() {
                       </div>
 
                       {/* Column 3: Loose Leaf Tea & Gifts */}
-                      <div className="space-y-5">
+                      <div className="space-y-5 min-w-0">
                         {/* Loose Leaf Tea */}
                         <div>
                           <Link
@@ -356,7 +401,7 @@ export function Header() {
                             <li>
                               <Link
                                 href="/shop/tea?sub=single-origin"
-                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all"
+                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all break-words leading-snug"
                               >
                                 Single-Origin Harvests
                               </Link>
@@ -364,7 +409,7 @@ export function Header() {
                             <li>
                               <Link
                                 href="/shop/tea?sub=blends"
-                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all"
+                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all break-words leading-snug"
                               >
                                 Artisanal Blends
                               </Link>
@@ -387,7 +432,7 @@ export function Header() {
                             <li>
                               <Link
                                 href="/shop/gift-boxes?sub=curated-hampers"
-                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all"
+                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all break-words leading-snug"
                               >
                                 Curated Gift Trunks
                               </Link>
@@ -395,7 +440,7 @@ export function Header() {
                             <li>
                               <Link
                                 href="/custom-hamper"
-                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all"
+                                className="block hover:text-[#0048BA] hover:translate-x-1 transition-all break-words leading-snug"
                               >
                                 Bespoke Hamper Studio
                               </Link>
@@ -406,14 +451,14 @@ export function Header() {
                     </div>
 
                     {/* Bottom Utility Strip */}
-                    <div className="mt-6 pt-3.5 border-t border-[#E8E4DC] flex items-center justify-between text-xs text-[#6B7280]">
-                      <span className="flex items-center gap-1.5 text-[11px]">
-                        <span className="w-2 h-2 rounded-full bg-[#5B8276]" />
-                        Complimentary White-Glove HK Delivery on Orders Over HK$ 800
+                    <div className="mt-5 pt-3.5 border-t border-[#E8E4DC] flex items-center justify-between gap-4 text-xs text-[#6B7280]">
+                      <span className="flex items-center gap-1.5 text-[11px] truncate">
+                        <span className="w-2 h-2 rounded-full bg-[#5B8276] shrink-0" />
+                        <span className="truncate">Complimentary White-Glove HK Delivery on Orders Over HK$ 800</span>
                       </span>
                       <Link
                         href="/shop"
-                        className="text-[#0048BA] font-bold hover:text-[#D1A345] flex items-center gap-1.5 group transition-colors"
+                        className="text-[#0048BA] font-bold hover:text-[#D1A345] flex items-center gap-1.5 group transition-colors shrink-0"
                       >
                         <span>Browse Complete Catalog</span>
                         <ArrowRight className="w-3.5 h-3.5 text-[#D1A345] group-hover:translate-x-0.5 transition-transform" />
